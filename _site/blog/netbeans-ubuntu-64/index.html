@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Netbeans and Ubuntu 64bits | Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+
+ 
+<div class="entry">
+  <h2>
+    
+    <span>Netbeans and Ubuntu 64bits</span>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Nov 23, 2009
+    — Filled in Technology
+    
+      and tagged as
+      ide, java, jdk, jvm, linux, netbeans, and ubuntu
+    
+
+    <a class="entry-comments" href="/blog/netbeans-ubuntu-64/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>I&#8217;ve been having some very annoying problems with Netbeans IDE running under Ubuntu Jaunty and Karmic. The Java virtual machine process would start to consume memory, probably due to a bug in Netbeans, at a very fast rate, after just 20 minutes of moderate use it would have consumed about 1Gb of RAM. This means that, on my 2GB laptop, the system starts to paginate the memory on disk, severely affecting the overall performance of the system.</p>
+
+<p>It was a strange behavior since one of the reasons why I settled on Netbeans recently is that it was more responsive and less demanding on resources than Eclipse. I certainly didn&#8217;t have any problem with it on Windows (Xp and Vista) or Apple&#8217;s OSX.</p>
+
+<p>The culprit seems to be the JDK used. I installed the Sun version of the JDK via the official apt repositories, since my system is 64bits it installed the 64bits version of the JDK. Unfortunately there is something wrong with it, at least when used for Netbeans, since changing to the 32bit version of the JDK seems to have solved the problem. At least the memory consumption stays below the 300Mb after a couple of hours.</p>
+
+<p>These are the steps I took to install the 32bit JDK on Ubuntu:</p>
+
+<ul>
+<li>
+<p>Obtain java-package: sudo apt-get install java-package</p>
+</li>
+
+<li>
+<p><a href='http://java.sun.com/javase/downloads/widget/jdk6.jsp'>Download the 32bit binary, just the JDK, from Sun</a></p>
+</li>
+
+<li>
+<p>Create a deb package from the JDK binary we just downloaded:</p>
+
+<pre><code> DEB_BUILD_GNU_TYPE=i486-linux-gnu DEB_BUILD_ARCH=i386 fakeroot make-jpkg jdk.xxx.bin</code></pre>
+</li>
+
+<li>
+<p>Install the created deb package</p>
+
+<pre><code> sudo dpkg -i sun-xxx.deb</code></pre>
+</li>
+
+<li>
+<p>Now edit your <a href='http://wiki.netbeans.org/FaqNetbeansConf'>netbeans.conf</a> file and point <code>netbeans_jdkhome</code> to the newly installed JDK directory. You can know it by checking the installed Java environments with <code>sudo update-alternatives -config java</code></p>
+</li>
+</ul>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+<div id="comments">
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    var disqus_developer = (/localhost|github|dev/i).test(location.host);
+    
+  </script>
+  <script type="text/javascript" src="http://disqus.com/forums/pollinimini/embed.js"></script>
+   
+  <noscript>
+    <a href="http://pollinimini.disqus.com/?url=ref">View the discussion thread.</a>
+  </noscript>
+</div>
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

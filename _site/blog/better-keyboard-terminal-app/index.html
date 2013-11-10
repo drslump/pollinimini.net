@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Better keyboard handling in Terminal.app | Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+
+ 
+<div class="entry">
+  <h2>
+    
+    <span>Better keyboard handling in Terminal.app</span>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Feb 28, 2010
+    — Filled in Technology
+    
+      and tagged as
+      osx, mac, terminal, and keyboard
+    
+
+    <a class="entry-comments" href="/blog/better-keyboard-terminal-app/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Apple OSX&#8217;s default terminal application, <em>Terminal.app</em>, has matured quite a bit over the last years. It offers a good balance between compatibility with modern shells, nice font rendering and a functional user interface with support for tabs. For people comming from other operating systems however, it&#8217;s a bit frustrating getting used to mac&#8217;s keyboard shortcuts.</p>
+
+<p>The default behaviour of <em>home</em>, <em>end</em> and <em>page</em> keys is specially traumatic, so after googling a fair bit<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup> I came up with the following recipies.</p>
+<table><thead><tr><th>Key</th><th>Action</th><th>Behaviour</th></tr></thead><tbody><tr><td style='text-align: left;'>home</td><td style='text-align: left;'><code>\033[1~</code></td><td style='text-align: left;'>Move to the start of the line</td>
+</tr><tr><td style='text-align: left;'>end</td><td style='text-align: left;'><code>\033[4~</code></td><td style='text-align: left;'>Move to the end of the line</td>
+</tr><tr><td style='text-align: left;'>page up</td><td style='text-align: left;'><code>\033[5~</code></td><td style='text-align: left;'>Search previous in the history</td>
+</tr><tr><td style='text-align: left;'>page down</td><td style='text-align: left;'><code>\033[6~</code></td><td style='text-align: left;'>Search next in the history</td>
+</tr><tr><td style='text-align: left;'>option left</td><td style='text-align: left;'><code>\033b</code></td><td style='text-align: left;'>Move one word left</td>
+</tr><tr><td style='text-align: left;'>option right</td><td style='text-align: left;'><code>\033f</code></td><td style='text-align: left;'>Move one word right</td>
+</tr><tr><td style='text-align: left;'>forward delete</td><td style='text-align: left;'><code>\033[3~</code></td><td style='text-align: left;'>Delete next char</td>
+</tr></tbody></table>
+<blockquote>
+<p>To change the behaviour of a key on Terminal.app we need to access the preferences and navigate to the <em>keyboard</em> tab. There we can modify and create new key mappings. To input <code>\033</code> just press the Esc key.</p>
+</blockquote>
+
+<p>Now for they to work properly we need configure <em>readline</em> by either editing as root <code>/etc/inputrc</code> or just creating an user file at <code>~/.inputrc</code></p>
+
+<pre><code># Be 8bit clean
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# allow the use of Home/End keys
+&quot;\e[1~&quot;: beginning-of-line
+&quot;\e[4~&quot;: end-of-line
+
+# allow the use of Delete/Insert keys
+&quot;\e[3~&quot;: delete-char
+&quot;\e[2~&quot;: quoted-insert
+
+# page up/down to search history
+&quot;\e[5~&quot;: history-search-backward
+&quot;\e[6~&quot;: history-search-forward</code></pre>
+
+<p>Time to restart your terminal session and get all the previous changes to work.</p>
+
+<p>By the way, if you work with tabs there are two lesser known keyboard shortcuts to change between them: <code>Cmd+Shift+Left</code> and <code>Cmd+Shift+Right</code> will change the active tab to the left or the right.</p>
+
+<p>As a bonus, we can modify all <em>Cocoa</em> based apps (Safari, Word, Mail &#8230;) to behave a bit more as our newly configured terminal by creating a custom keyboard binding in <code>~/Library/KeyBindings/DefaultKeyBinding.dict</code>:</p>
+
+<pre><code>{
+    &quot;\UF729&quot; = &quot;moveToBeginningOfLine:&quot;; 
+    &quot;\UF72B&quot; = &quot;moveToEndOfLine:&quot;; 
+    &quot;$\UF729&quot; = &quot;moveToBeginningOfLineAndModifySelection:&quot;;
+    &quot;$\UF72B&quot; = &quot;moveToEndOfLineAndModifySelection:&quot;;
+    &quot;\UF72C&quot; = &quot;pageUp:&quot;; 
+    &quot;\UF72D&quot; = &quot;pageDown:&quot;; 
+    &quot;$\UF72C&quot; = &quot;pageUpAndModifySelection:&quot;; 
+    &quot;$\UF72D&quot; = &quot;pageDownAndModifySelection:&quot;; 
+}</code></pre>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p><a href='http://tech.inhelsinki.nl/gnu_developement_under_mac_os_x/'>http://tech.inhelsinki.nl/gnu_developement_under_mac_os_x/</a></p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+<div id="comments">
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    var disqus_developer = (/localhost|github|dev/i).test(location.host);
+    
+  </script>
+  <script type="text/javascript" src="http://disqus.com/forums/pollinimini/embed.js"></script>
+   
+  <noscript>
+    <a href="http://pollinimini.disqus.com/?url=ref">View the discussion thread.</a>
+  </noscript>
+</div>
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

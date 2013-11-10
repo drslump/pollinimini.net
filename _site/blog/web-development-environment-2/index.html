@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>A web development environment (II) - Cygwin | Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+
+ 
+<div class="entry">
+  <h2>
+    
+    <span>A web development environment (II) - Cygwin</span>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Dec 26, 2007
+    — Filled in Code
+    
+      and tagged as
+      software and webdev
+    
+
+    <a class="entry-comments" href="/blog/web-development-environment-2/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Following with the series I will introduce in this chapter <a href='http://www.cygwin.com/'>Cygwin</a>.</p>
+
+<p>Cygwin is an excellent collection of Unix utilities and programs ported to Windows. While its <em>emulation</em> of an Unix like environment is quite good I actually don’t use it. I install it just for the helpful utilities it has. Although I do occasionally use its shell to perform some command line tasks which on Windows’ cmd.exe would be a real nightmare to perform.</p>
+
+<p>Lets set it up and then we can see some tips and tricks.</p>
+
+<ul>
+<li>
+<p>Download the <a href='http://www.cygwin.com/'>Cygwin installer</a></p>
+</li>
+
+<li>
+<p>Move the installer (setup.exe) to <code>c:\dev\cygwin</code> and launch it</p>
+</li>
+
+<li>
+<p>Set the <em>Root Directory</em> to <code>c:\dev\cygwin</code> and the <em>Local Package Directory</em> to <code>c:\dev\cygwin\packages</code></p>
+</li>
+
+<li>
+<p>Choose at least the following packages to install. You won’t probably need all of them but in my experience these are the most commonly used and they don’t take much space actually:</p>
+
+<dl>
+<dt>Admin</dt>
+
+<dd>shutdown</dd>
+
+<dt>Archive</dt>
+
+<dd>unzip, zip</dd>
+
+<dt>Base</dt>
+
+<dd>bash, findutils, grep, gzip, run, tar, sed, termcap, terminfo</dd>
+
+<dt>Database</dt>
+
+<dd>sqlite3</dd>
+
+<dt>Devel</dt>
+
+<dd>binutils, automake, cvs, cygport, gcc, make, subversion</dd>
+
+<dt>Editors</dt>
+
+<dd>nano, vim</dd>
+
+<dt>Graphics</dt>
+
+<dd>ImageMagick</dd>
+
+<dt>Interpreters</dt>
+
+<dd>m4, perl, python, ruby</dd>
+
+<dt>Net</dt>
+
+<dd>curl, openssh, openssl, rsync</dd>
+
+<dt>Shells</dt>
+
+<dd>bash, bash-completion</dd>
+
+<dt>Text</dt>
+
+<dd>less, tidy</dd>
+
+<dt>Utils</dt>
+
+<dd>bzip2, cygutils, diffutils, gnupg, patch, scree</dd>
+
+<dt>Web</dt>
+
+<dd>cadaver, curl, httping, links, lynx, wget</dd>
+</dl>
+</li>
+
+<li>
+<p>Now wait for all packages to download and install (it will take a while)</p>
+</li>
+
+<li>
+<p>Once the installation is complete we can launch the Cygwin system by running <code>c:\dev\cygwin\cygwin.bat</code></p>
+</li>
+
+<li>
+<p>On the first run it’ll create a new configuration and home directory for our user. Follow the instructions given on the terminal to complete the installation.</p>
+</li>
+</ul>
+
+<p>Ok, so Cygwin is now setup and it’s time to learn a few tips.</p>
+
+<p>On a standard installation Cygwin will create a home directory for the user in <code>c:\dev\cygwin\home\[USER]</code>. However we might want to re-use our Windows folder so we have a unique location for our stuff. To do it we just need to create an environment variable (in <em>System Preferences</em>) called <code>HOME</code> with the path to our profile folder (<code>c:\Users\[USER]</code> in Vista). Now we have to edit <code>/etc/passwd</code> and change the home folder to our Windows profile one (<code>/cygdrive/c/Users/[USER]</code>), we can move the contents of the old home folder to the new one with the following commands:</p>
+
+<pre><code>$ mv /home/[USER]/* /cygdrive/c/Users/[USER]/.
+$ mv /home/.* /cygdrive/c/Users/[USER]/.</code></pre>
+
+<p>By default the Windows drive letters are accessible in <code>/cygdrive/[DRIVE]</code>, that is ok but it’s used often so we can save a few key strokes by creating symlinks at the root of the file system. Create one for each of your drive letters so you can access them as <code>/[DRIVE]/my/path/to/a/file</code>.</p>
+
+<pre><code>$ ln -s /cygdrive/c /c</code></pre>
+
+<p>As we have seen Cygwin uses Unix like paths so to launch Windows programs from the shell we have to make an extra step and that is to convert between paths. Fortunately there is a little tool called <code>cygpath</code>. When used without modifiers it will translate a Windows path to a Cygwin one and when used with the <strong>-w</strong> or the <strong>-m</strong> modifiers it will do the opposite conversion.</p>
+
+<p>Another nice tool is cygstart which launches a program (or the default program associated with a document). The good about it is that it will launch the program and detach the process from the console.</p>
+
+<p>For commonly used programs it’s a bit uncomfortable to use <code>cygpath</code> and <code>cygstart</code>, like for example to launch our favourite text editor. In this example I’m going to use Notepad as an example. We just have to change our bash init script (<code>~/.bashrc</code>) to include a function to launch Notepad easily from the command line. Add the following to your <code>.bashrc</code> file:</p>
+
+<pre><code>notepad () {
+    cygstart &quot;c:/Windows/System32/notepad.exe&quot; &quot;`cygpath -w $1`&quot;
+}</code></pre>
+
+<p>Now we can edit the contents of a text file just doing <code>notepad /var/log/setup.log</code>. This is a great way to really integrate Cygwin with Windows, which actually makes the Cygwin system ready for real work.</p>
+
+<p>Another useful utility is <a href='http://www.skamphausen.de/cgi-bin/ska/CDargs'>cdargs</a> which while not an official part of the Cygwin system can be compiled from source. To install it we just have to download its <a href='http://www.skamphausen.de/downloads/cdargs'>latests source tarball</a> and unpack it into your Cygwin home directory. Then issue the following commands:</p>
+
+<pre><code>$ cd cdargs-1.XX
+$ ./configure
+$ make
+$ make install
+$ cp contrib/cdargs-bash.sh /etc/profile.d/.
+$ source /etc/profile.d/cdargs-bash.sh</code></pre>
+
+<p>Explaining how to use this tool is beyond the scope of this article. There is a nice <a href='http://www.linux.com/articles/114073'>mini tutorial at Linux.com</a> and <a href='http://www.google.com/search?q=cdargs%2Btutorial'>Google</a> will give you plenty of information about this tool.</p>
+
+<p>There is a lot of software compatible with Cygwin beyond the packages included in the official repository. The <a href='http://cygwinports.dotsrc.org/'>Cygwin Ports project</a> offers a few dozens of applications already compiled and ready to be installed. It’s well worth a look. Besides there are many Unix/Linux applications which can be compiled to be used in Cygwin even if they don’t redistribute the binary packages.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+<div id="comments">
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    var disqus_developer = (/localhost|github|dev/i).test(location.host);
+    
+  </script>
+  <script type="text/javascript" src="http://disqus.com/forums/pollinimini/embed.js"></script>
+   
+  <noscript>
+    <a href="http://pollinimini.disqus.com/?url=ref">View the discussion thread.</a>
+  </noscript>
+</div>
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

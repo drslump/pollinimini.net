@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/web-development-environment-1">A web development environment (I) - Introduction</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Dec 26, 2007
+    — Filled in Code
+    
+      and tagged as
+      software and webdev
+    
+
+    <a class="entry-comments" href="/blog/web-development-environment-1/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <blockquote>
+<p>This will be a series of posts dedicated to document my current development setup. This setup tries to be the one of a Ninja. It won’t end up with a bunch of boring application windows typical of a bald engineer. It also won’t be a group of black terminal windows running vi as a pseudo operating system like the average geek wannabe. I’m in the search of the Ninja feeling, with white on black text editors, translucent terminals and a dose of eye candy so that I feel special without having to resort to browsing youtube with Lynx.</p>
+</blockquote>
+
+<p>After many years I am finally happy with my current development setup. It fits my needs and this series of articles should serve myself as a reminder on how to setup the different pieces. However I guess that it will also be of inspiration for other developers who haven’t already found their peace of mind with their environment.</p>
+
+<p>I’ll focus on Microsoft Windows systems but most of the stuff can be easily implemented in other operating systems. Actually much of the things I do for windows come standard in several operating system distributions, it’s just that I happen to like Windows (which obviously harms my geek status).</p>
+
+<p>The main building blocks for this environment are the following ones:</p>
+
+<dl>
+<dt>Cygwin</dt>
+
+<dd>A collection of very useful Unix utilities for Windows.</dd>
+
+<dt>coLinux</dt>
+
+<dd>Wonderful <em>virtualization</em> software to run Linux side by side Windows.</dd>
+
+<dt>Debian</dt>
+
+<dd>The only Linux distro I know a bit about. It’s fantastic so I don’t have the need to search for a better one.</dd>
+
+<dt>PHP5</dt>
+
+<dd>Currently the programming language of my choice.</dd>
+
+<dt>Console2</dt>
+
+<dd>An excellent terminal emulator with lots of eye candy.</dd>
+
+<dt>Firefox</dt>
+
+<dd>The browser that came to rule them all.</dd>
+
+<dt>A lightweight text editor</dt>
+
+<dd>Everyone has its favorite</dd>
+
+<dt>A heavy IDE</dt>
+
+<dd>Komodo and Eclipse to the rescue</dd>
+
+<dt>Several utilities to ease our lives</dt>
+
+<dd>TortoiseSVN, kdiff3, wincachegrind, total commander…</dd>
+</dl>
+
+<p>Before we begin I would like to note the following:</p>
+
+<ul>
+<li>All tools are installed in <code>C:\dev</code>. I don’t like polluting the standard Windows installation with the development tools. Besides, it allows to easily backup most of the environment.</li>
+
+<li>I’m using a 32bit version of Windows Vista since coLinux is not compatible with 64bit versions.</li>
+</ul>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/xdebug-bookmarklet">Xdebug bookmarklet</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Nov 26, 2007
+    — Filled in Code
+    
+      and tagged as
+      php, webdev, and xdebug
+    
+
+    <a class="entry-comments" href="/blog/xdebug-bookmarklet/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Nothing really new since there is already a <a href='https://addons.mozilla.org/en-US/firefox/addon/3960'>firefox extension</a> which does just the same, but I also wanted to support other browsers.</p>
+
+<p>So this bookmarklet toggles the cookie Xdebug uses to check if it should debug the running script or not!.</p>
+<p>
+    <a href='javascript:(function(){var idekey=&apos;&apos;, minutes=10, exp=new Date(); document.title=&apos;Xdebug disabled&apos;; if(document.cookie.match(/(^|;)\s*XDEBUG_SESSION=/)){minutes=-minutes;} else { if(!idekey) idekey=prompt(&apos;Set the IDE key for this debugging session if needed (cancel to disable)&apos;,&apos;default&apos;); if(idekey===null){minutes=-minutes}else{document.title=&apos;Xdebug enabled&apos;}} exp.setTime(exp.getTime()+minutes*60*1000);document.cookie=&apos;XDEBUG_SESSION=&apos;+(idekey?idekey:&apos;default&apos;)+&apos;;expires=&apos;+exp.toGMTString()}())'>Toggle Xdebug</a>
+</p>
+<p>Drag it to your bookmarks (or favorites or whatever your browser calls it) toolbar so it&#8217;s easy to access. Assign it a keyboard shortcut, if your browser has that function, and you&#8217;re done.</p>
+
+<p>By default it&#8217;ll prompt for the <em>idekey</em> to be used by Xdebug, it&#8217;s a good idea to modify the <em>idekey</em> variable at the start of the bookmarklet&#8217;s source with your <em>idekey</em> or with <em>default</em> if you&#8217;re not using a DBGp proxy.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/introducing-dbgp-path-mapper-intercepting-proxy">Introducing DBGp Path Mapper intercepting proxy</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Nov 25, 2007
+    — Filled in Code
+    
+      and tagged as
+      xdebug, dbgp, php, and webdev
+    
+
+    <a class="entry-comments" href="/blog/introducing-dbgp-path-mapper-intercepting-proxy/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>My current IDE of choice, <a href='http://www.activestate.com/'>Komodo</a>, brings native support for the <a href='http://xdebug.org/docs-dbgp.php'>DBGp protocol</a> to debug source code either locally or from a remote server. <del>It has however some
+issues with its path mapping implementation</del><sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup>.</p>
+
+<p>Since it’s not the first time I stumbled upon this kind of issue (my previous <a href='http://www.eclipse.org/pdt'>Eclipse PDT</a> experience was troublesome too) I finally tried to solve it. The solution is an intercepting proxy server which listen for connection from the debugger to modify the messages it sends to the IDE with custom path mappings.</p>
+
+<p>To define the path mappings we use a file with a set of paths on each line. The path tuples are separated by the =&gt; operator, placing the path understood by the debugger on the left side and on the right the path as understood by the IDE. The file looks like this.</p>
+
+<pre><code># Mapping for projects
+file:///var/www/projects =&gt; file:///c:/Users/DrSlump/projects
+# this one is for my subdomains
+file:///var/www/subdomains =&gt; file:///c:/subdomainsCopy to clipboard</code></pre>
+
+<p>Note that the path mappings are case insensitive to avoid problems on Windows.</p>
+
+<p>To run the path mapper server we just need to call it from a terminal like so:</p>
+
+<pre><code>$ php5 dbgp-mapper.php -i 192.168.0.5 -m dbgp.mapCopy to clipboard</code></pre>
+
+<p>The <strong>-i</strong> option specifies the IP or host of the computer where the IDE is running, while the <strong>-m</strong> option points to the file where the path mappings are defined. There are also other options which you can check by seeing the built in help using the <strong>-h</strong> argument.</p>
+
+<p>By default it will bind itself to the port 9000, which is DBGp default one, so if you are running this on the same computer as your IDE you will have to change the port either in this tool or on your IDE.</p>
+
+<p>The source is available via <a href='http://svn.pollinimini.net/public/dbgp-mapper'>this subversion repository</a></p>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>It seems that Komodo&#8217;s uri mapping works properly after version 4.2.0. In my case I was having problems but after rebooting the system it started to work properly.</p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/textmate-myth">TextMate, the myth</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Nov 02, 2007
+    — Filled in Technology
+    
+      and tagged as
+      software
+    
+
+    <a class="entry-comments" href="/blog/textmate-myth/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Source code editing and programming tools in general are one of those things I like to be up to date with, you never know when you’re going to find a killer tool which will boost your productivity.</p>
+
+<p>For a couple of years I keep hearing about an awesome editor for Macs called TextMate. People even comment on forums and blogs that they are thinking to switch to Mac just to use it.</p>
+
+<p>Well, I switched to Mac a few weeks ago and one of the first things I installed was this TextMate editor. Given all the hype around it I thought it was going to be my new favourite editor. However there is a lot of myth around this software. For the last year I’ve been using Eclipse on Windows as my heavy work IDE with Notepad++ as casual editor for quick operations. Now on the Mac Eclipse runs quite slowly so I’ve been using TextMate a lot in the last days and while it’s a great replacement for Notepad++ it doesn’t come close to a real IDE. The Bundles are nice and expose a lot of possibilities but they are useless to work on a big project.</p>
+
+<p>When you have to deal with a few hundreds library files (Zend Framework, Doctrine, Pear…) plus another few hundreds of the project then there is nothing else to do that to use a real IDE with professional tools like integrated debugger, a real code parser, a code explorer and powerful refactoring tools (at least a good find and replace dialog with regular expression support). Then there are some extras like bracket pairing, code versioning, code formatting and smart indentation.</p>
+
+<p>Sure some of you could argue that TextMate’s power is on its snippets/bundles customization but lets be serious. I don’t mind writing function or class constructs continuously, it can get tedious but what really hurts your performance is having to leave the file your are editing because you don’t remember the exact spelling of an obscure method from a rarely used class, or you can’t recall what was the order of the arguments for that function that you checked just two hours ago.</p>
+
+<p>Given that Eclipse is running like a dog on my system I’ve searched for an alternative and to my surprise I’ve found a killer one. ActiveState’s Komodo IDE, which I had trialed a few months ago in Windows but didn’t really paid attention to it. It’s dialogs are a bit buggy, the default colour schemes are quite ugly, it takes ages to load, is very expensive and it’s not the easiest to configure to a point where it’s useable but… it’s really customizable and has a ton of features out of the box. Moreover there is Komodo Edit which is free but doesn’t have an integrated debugger, so I’m going to settle on it and will keep Eclipse for remote debugging. Let’s see if ActiveState drops the price so it can get more popular. By the way, it also has support for code snippets and macros which can make most of the stuff that TextMate’s bundles can do.</p>
+
+<p>So right now, I’m using Komodo IDE and TextMate. When the trial periods of both are over I’ll have a combination of Komodo Edit, Eclipse and Smultron for the fast editing.</p>
+
+<p>PS: Excuse the lack of links… google is your friend</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+
+
+
+  <div id="pagination">
+    
+      <a class="prev" href="/page5/">&laquo; Newer</a>
+    
+  
+    
+      
+        <a class="num" href="/">1</a>
+      
+    
+      
+        <a class="num" href="/page2/">2</a>
+      
+    
+      
+        <a class="num" href="/page3/">3</a>
+      
+    
+      
+        <a class="num" href="/page4/">4</a>
+      
+    
+      
+        <a class="num" href="/page5/">5</a>
+      
+    
+      
+        <span class="num">6</span>
+      
+    
+      
+        <a class="num" href="/page7/">7</a>
+      
+    
+      
+        <a class="num" href="/page8/">8</a>
+      
+    
+      
+        <a class="num" href="/page9/">9</a>
+      
+    
+      
+        <a class="num" href="/page10/">10</a>
+      
+    
+      
+        <a class="num" href="/page11/">11</a>
+      
+    
+      
+        <a class="num" href="/page12/">12</a>
+      
+    
+  
+    
+      <a class="next" href="/page7/">Older &raquo;</a>
+    
+  </div>
+
+
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

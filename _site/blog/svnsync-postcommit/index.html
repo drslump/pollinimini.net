@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Subversion svnsync post-commit hook work around | Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+
+ 
+<div class="entry">
+  <h2>
+    
+    <span>Subversion svnsync post-commit hook work around</span>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    May 11, 2010
+    — Filled in Code
+    
+      and tagged as
+      subversion and svn
+    
+
+    <a class="entry-comments" href="/blog/svnsync-postcommit/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Just a quickie for future reference. Svnsync is a tool that comes with Subversion that allows to create read-only mirrors of Subversion repositories.</p>
+
+<p>Creating a mirror is quite easy and usually involves the following steps:</p>
+
+<ul>
+<li>
+<p>First we create a standard subversion repository.</p>
+
+<pre><code> mkdir mirror
+ svnadmin create mirror</code></pre>
+</li>
+
+<li>
+<p>Now we have to create a pre-revprop-change hook that only allows the <em>svnsync</em> write access to it. Remember that the mirror is read-only. Put the following contents in <code>mirror/hooks/pre-revprop-change</code>.</p>
+
+<pre><code> #!/bin/sh
+
+ if [ &quot;$3&quot; = &quot;svnsync&quot; ]; then exit 0; fi
+ echo &quot;Only svnsync user may edit revision properties through svnsync&quot; &gt;&amp;2
+ exit 1</code></pre>
+</li>
+
+<li>
+<p>To activate the hook we need to give it executable permissions.</p>
+
+<pre><code> chmod +x mirror/hooks/pre-revprop-change</code></pre>
+</li>
+
+<li>
+<p>Configure the synchronization</p>
+
+<pre><code> svnsync init --username svnsync \
+     file:///path/to/mirror \
+     https://url.to/repository</code></pre>
+</li>
+
+<li>
+<p>Finally perform the synchronization! You can put this command in the cron system for example to ensure the mirror is kept up-to-date.</p>
+
+<pre><code> svnsync sync file:///path/to/mirror</code></pre>
+</li>
+</ul>
+
+<p>There is a problem though with this setup if we want to use a <em>post-commit hook</em>. <em>svnsync</em> works by first committing a synced revision with its own user and then, in a second step, modifies the revision properties to change the author and date to those of the original repository. This means that <em>post-commit</em> hooks which need to obtain the revision author or date cannot be property run, since the reported author and date will be wrong.</p>
+
+<p>The solution is to use a different hook, <em>post-revprop-change</em>, which is triggered each time a revision property is changed. We can have something as the following script to emulate a normal <em>post-commit</em> hook.</p>
+<div class='highlight'><pre><code class='sh'>  <span class='c'>#!/bin/sh</span>
+
+  <span class='nv'>REPOS</span><span class='o'>=</span><span class='s2'>&quot;$1&quot;</span>
+  <span class='nv'>REV</span><span class='o'>=</span><span class='s2'>&quot;$2&quot;</span>
+  <span class='nv'>USER</span><span class='o'>=</span><span class='s2'>&quot;$3&quot;</span>
+  <span class='nv'>PROPNAME</span><span class='o'>=</span><span class='s2'>&quot;$4&quot;</span>
+  <span class='nv'>ACTION</span><span class='o'>=</span><span class='s2'>&quot;$5&quot;</span>
+
+  <span class='c'># Only do actual work when the &quot;svn:date&quot; property is modified, which seems</span>
+  <span class='c'># to be the last revision property modified by the svnsync process.</span>
+  <span class='k'>if</span> <span class='o'>[</span> <span class='s2'>&quot;$ACTION&quot;</span> <span class='o'>=</span> <span class='s2'>&quot;M&quot;</span> -a <span class='s2'>&quot;$PROPNAME&quot;</span> <span class='o'>=</span> <span class='s2'>&quot;svn:date&quot;</span> <span class='o'>]</span><span class='p'>;</span> <span class='k'>then</span>
+<span class='k'>    </span><span class='nv'>AUTHOR</span><span class='o'>=</span><span class='sb'>`</span>svnlook author <span class='nv'>$REPOS</span> -r <span class='nv'>$REV</span><span class='sb'>`</span>
+    <span class='nv'>DATE</span><span class='o'>=</span><span class='sb'>`</span>svnlook date <span class='nv'>$REPOS</span> -r <span class='nv'>$REV</span><span class='sb'>`</span>
+    <span class='nv'>LOG</span><span class='o'>=</span><span class='sb'>`</span>svnlook log <span class='nv'>$REPOS</span> -r <span class='nv'>$REV</span><span class='sb'>`</span>
+
+    <span class='nb'>echo</span> <span class='s2'>&quot;$REPOS@$REV: $LOG by $AUTHOR at $DATE&quot;</span>
+  <span class='k'>fi</span>
+  
+</code></pre></div>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+<div id="comments">
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    var disqus_developer = (/localhost|github|dev/i).test(location.host);
+    
+  </script>
+  <script type="text/javascript" src="http://disqus.com/forums/pollinimini/embed.js"></script>
+   
+  <noscript>
+    <a href="http://pollinimini.disqus.com/?url=ref">View the discussion thread.</a>
+  </noscript>
+</div>
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+{% assign post = page %}
+{% assign detail = true %}
+
+<div class="entry">
+  <h2>
+    <span>{{ post.title }}</span>
+  </h2>
+
+  <div class="entry-meta">
+  </div>
+
+  <div class="entry-content">
+    {{ content }}
+  </div>
+
+  <div class="entry-footer">
+  </div>
+</div>
+
+<div id="pagination">
+  {% if page.previous %}
+  <a class="prev" href="{{ page.previous.url }}">&laquo; {{ page.previous.title | truncatewords:5 }}</a>
+  {% endif %}
+
+  {% if page.next %}
+  <a class="next" href="{{ page.next.url }}">{{ page.next.title | truncatewords:5 }} &raquo;</a>
+  {% endif %}
+</div>

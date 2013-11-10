@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/netbeans-ubuntu-64">Netbeans and Ubuntu 64bits</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Nov 23, 2009
+    — Filled in Technology
+    
+      and tagged as
+      ide, java, jdk, jvm, linux, netbeans, and ubuntu
+    
+
+    <a class="entry-comments" href="/blog/netbeans-ubuntu-64/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>I&#8217;ve been having some very annoying problems with Netbeans IDE running under Ubuntu Jaunty and Karmic. The Java virtual machine process would start to consume memory, probably due to a bug in Netbeans, at a very fast rate, after just 20 minutes of moderate use it would have consumed about 1Gb of RAM. This means that, on my 2GB laptop, the system starts to paginate the memory on disk, severely affecting the overall performance of the system.</p>
+
+<p>It was a strange behavior since one of the reasons why I settled on Netbeans recently is that it was more responsive and less demanding on resources than Eclipse. I certainly didn&#8217;t have any problem with it on Windows (Xp and Vista) or Apple&#8217;s OSX.</p>
+
+<p>The culprit seems to be the JDK used. I installed the Sun version of the JDK via the official apt repositories, since my system is 64bits it installed the 64bits version of the JDK. Unfortunately there is something wrong with it, at least when used for Netbeans, since changing to the 32bit version of the JDK seems to have solved the problem. At least the memory consumption stays below the 300Mb after a couple of hours.</p>
+
+<p>These are the steps I took to install the 32bit JDK on Ubuntu:</p>
+
+<ul>
+<li>
+<p>Obtain java-package: sudo apt-get install java-package</p>
+</li>
+
+<li>
+<p><a href='http://java.sun.com/javase/downloads/widget/jdk6.jsp'>Download the 32bit binary, just the JDK, from Sun</a></p>
+</li>
+
+<li>
+<p>Create a deb package from the JDK binary we just downloaded:</p>
+
+<pre><code> DEB_BUILD_GNU_TYPE=i486-linux-gnu DEB_BUILD_ARCH=i386 fakeroot make-jpkg jdk.xxx.bin</code></pre>
+</li>
+
+<li>
+<p>Install the created deb package</p>
+
+<pre><code> sudo dpkg -i sun-xxx.deb</code></pre>
+</li>
+
+<li>
+<p>Now edit your <a href='http://wiki.netbeans.org/FaqNetbeansConf'>netbeans.conf</a> file and point <code>netbeans_jdkhome</code> to the newly installed JDK directory. You can know it by checking the installed Java environments with <code>sudo update-alternatives -config java</code></p>
+</li>
+</ul>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/optimizing-js-css-zend-framework">Optimizing Javascript and CSS downloads with Zend Framework</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Aug 27, 2009
+    — Filled in Code
+    
+      and tagged as
+      zf, php, scale, webdev, zend, javascript, and css
+    
+
+    <a class="entry-comments" href="/blog/optimizing-js-css-zend-framework/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Modern web sites and applications require the use of many javascript and css files. If not done with care this can affect the user&#8217;s experience. One of the easiest methods to improve the performance is by concatenating and minimizing the individual files into <em>bundles</em>, reducing this way the number of downloads and the total size to be downloaded.</p>
+
+<p>One problem with this approach though is that during development phases it&#8217;s important to work with the original source files, so it&#8217;s easier to debug or perform changes in them. From the developer&#8217;s point of view it&#8217;s ideal to work with small files.</p>
+
+<p>Zend Framework offers an interesting way to include external javascript and css files in your pages. The <code>headLink</code> and <code>headScript</code> view helpers allow to include files in the page at any point in the execution which will be finally added to the head section of your layout just before sending the page to the browser. Since all the files are actually added to page at the end of the request we can override those helpers and filter their contents to replace the individual files with our bundles.</p>
+
+<p>Fortunately, both helpers implement the Iterator interface, which means that&#8217;s very easy to attach a filter mechanism to them. First thing we need is a filtering iterator as shown here:</p>
+<div class='highlight'><pre><code class='php'><span class='cp'>&lt;?php</span>
+<span class='sd'>/** vim: ff=unix fenc=utf8 tw=80 ts=4 sw=4 et ai</span>
+<span class='sd'> *</span>
+<span class='sd'> * Implements a filter iterator designed to modify the default behaviour of Zend</span>
+<span class='sd'> * view helpers HeadLink and HeadScript to support the runtime replacement</span>
+<span class='sd'> * of individual javascript and css files for its corresponding bundles.</span>
+<span class='sd'> *</span>
+<span class='sd'> * License</span>
+<span class='sd'> *</span>
+<span class='sd'> * Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class='sd'> * of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class='sd'> * in the Software without restriction, including without limitation the rights</span>
+<span class='sd'> * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class='sd'> * copies of the Software, and to permit persons to whom the Software is</span>
+<span class='sd'> * furnished to do so, subject to the following conditions:</span>
+<span class='sd'> *</span>
+<span class='sd'> * The above copyright notice and this permission notice shall be included in</span>
+<span class='sd'> * all copies or substantial portions of the Software.</span>
+<span class='sd'> *</span>
+<span class='sd'> * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class='sd'> * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class='sd'> * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class='sd'> * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class='sd'> * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class='sd'> * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class='sd'> * THE SOFTWARE.</span>
+<span class='sd'> *</span>
+<span class='sd'> * @copyright   Copyright (c) 2009 Iván Montes</span>
+<span class='sd'> * @author      Iván -DrSlump- Montes &lt;drslump@pollinimini.net&gt;</span>
+<span class='sd'> */</span>
+<span class='k'>class</span> <span class='nc'>BundlesFilterIterator</span> <span class='k'>extends</span> <span class='nx'>FilterIterator</span>
+<span class='p'>{</span>
+    <span class='sd'>/** @var array */</span>
+    <span class='k'>protected</span> <span class='nv'>$_files</span> <span class='o'>=</span> <span class='k'>array</span><span class='p'>();</span>
+    <span class='sd'>/** @var array */</span>
+    <span class='k'>protected</span> <span class='nv'>$_included</span> <span class='o'>=</span> <span class='k'>array</span><span class='p'>();</span>
+
+    <span class='sd'>/**</span>
+<span class='sd'>     * Constructor</span>
+<span class='sd'>     *</span>
+<span class='sd'>     * @param Iterator $iterator</span>
+<span class='sd'>     * @param array $bundles</span>
+<span class='sd'>     */</span>
+    <span class='k'>public</span> <span class='k'>function</span> <span class='nf'>__construct</span><span class='p'>(</span><span class='nv'>$iterator</span><span class='p'>,</span> <span class='nv'>$bundles</span><span class='p'>)</span>
+    <span class='p'>{</span>
+        <span class='c1'>// Reverses the array placing the individual files as keys and the</span>
+        <span class='c1'>// bundle files as values</span>
+        <span class='k'>foreach</span> <span class='p'>(</span> <span class='nv'>$bundles</span> <span class='k'>as</span> <span class='nv'>$bundle</span> <span class='o'>=&gt;</span> <span class='nv'>$files</span> <span class='p'>)</span> <span class='p'>{</span>
+            <span class='k'>foreach</span> <span class='p'>(</span><span class='nv'>$files</span> <span class='k'>as</span> <span class='nv'>$file</span><span class='p'>)</span> <span class='p'>{</span>
+                <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>_files</span><span class='p'>[</span><span class='nv'>$file</span><span class='p'>]</span> <span class='o'>=</span> <span class='nv'>$bundle</span><span class='p'>;</span>
+            <span class='p'>}</span>
+        <span class='p'>}</span>
+
+        <span class='k'>parent</span><span class='o'>::</span><span class='na'>__construct</span><span class='p'>(</span><span class='nv'>$iterator</span><span class='p'>);</span>
+    <span class='p'>}</span>
+
+    <span class='sd'>/**</span>
+<span class='sd'>     * Performs the filtering</span>
+<span class='sd'>     *</span>
+<span class='sd'>     * @return bool</span>
+<span class='sd'>     */</span>
+    <span class='k'>public</span> <span class='k'>function</span> <span class='nf'>accept</span><span class='p'>()</span>
+    <span class='p'>{</span>
+        <span class='c1'>// Get the current item</span>
+        <span class='nv'>$item</span> <span class='o'>=</span> <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>getInnerIterator</span><span class='p'>()</span><span class='o'>-&gt;</span><span class='na'>current</span><span class='p'>();</span>
+
+        <span class='c1'>// Check if it is an external javascript or css file</span>
+        <span class='nv'>$type</span> <span class='o'>=</span> <span class='s1'>&#39;js&#39;</span><span class='p'>;</span>
+        <span class='nv'>$src</span> <span class='o'>=</span> <span class='nb'>isset</span><span class='p'>(</span><span class='nv'>$item</span><span class='o'>-&gt;</span><span class='na'>attributes</span><span class='p'>[</span><span class='s1'>&#39;src&#39;</span><span class='p'>])</span> <span class='o'>?</span> <span class='nv'>$item</span><span class='o'>-&gt;</span><span class='na'>attributes</span><span class='p'>[</span><span class='s1'>&#39;src&#39;</span><span class='p'>]</span> <span class='o'>:</span> <span class='k'>null</span><span class='p'>;</span>
+        <span class='k'>if</span> <span class='p'>(</span><span class='k'>empty</span><span class='p'>(</span><span class='nv'>$src</span><span class='p'>))</span> <span class='p'>{</span>
+            <span class='nv'>$type</span> <span class='o'>=</span> <span class='s1'>&#39;css&#39;</span><span class='p'>;</span>
+            <span class='nv'>$src</span> <span class='o'>=</span> <span class='nb'>isset</span><span class='p'>(</span><span class='nv'>$item</span><span class='o'>-&gt;</span><span class='na'>href</span><span class='p'>)</span> <span class='o'>?</span> <span class='nv'>$item</span><span class='o'>-&gt;</span><span class='na'>href</span> <span class='o'>:</span> <span class='k'>null</span><span class='p'>;</span>
+        <span class='p'>}</span>
+
+        <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='k'>empty</span><span class='p'>(</span><span class='nv'>$src</span><span class='p'>)</span> <span class='o'>&amp;&amp;</span>
+            <span class='c1'>// The individual file is in a bundle</span>
+            <span class='nb'>isset</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>_files</span><span class='p'>[</span><span class='nv'>$src</span><span class='p'>])</span> <span class='o'>&amp;&amp;</span>
+            <span class='c1'>// Check if it is a normal include</span>
+            <span class='k'>empty</span><span class='p'>(</span><span class='nv'>$item</span><span class='o'>-&gt;</span><span class='na'>attributes</span><span class='p'>[</span><span class='s1'>&#39;defer&#39;</span><span class='p'>])</span> <span class='o'>&amp;&amp;</span>
+            <span class='k'>empty</span><span class='p'>(</span><span class='nv'>$item</span><span class='o'>-&gt;</span><span class='na'>attributes</span><span class='p'>[</span><span class='s1'>&#39;conditional&#39;</span><span class='p'>])</span> <span class='o'>&amp;&amp;</span>
+            <span class='k'>empty</span><span class='p'>(</span><span class='nv'>$item</span><span class='o'>-&gt;</span><span class='na'>attributes</span><span class='p'>[</span><span class='s1'>&#39;conditionalStylesheet&#39;</span><span class='p'>]))</span> <span class='p'>{</span>
+
+            <span class='c1'>// Get the bundle file</span>
+            <span class='nv'>$bundle</span> <span class='o'>=</span> <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>_files</span><span class='p'>[</span><span class='nv'>$src</span><span class='p'>];</span>
+
+            <span class='c1'>// If its bundle was not yet included do so now</span>
+            <span class='c1'>// The HeadXXXX helpers will also check for this but still...</span>
+            <span class='k'>if</span> <span class='p'>(</span><span class='k'>empty</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>_included</span><span class='p'>[</span><span class='nv'>$bundle</span><span class='p'>]))</span> <span class='p'>{</span>
+                <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>_included</span><span class='p'>[</span><span class='nv'>$bundle</span><span class='p'>]</span> <span class='o'>=</span> <span class='k'>true</span><span class='p'>;</span>
+                <span class='k'>if</span> <span class='p'>(</span><span class='nv'>$type</span> <span class='o'>===</span> <span class='s1'>&#39;js&#39;</span><span class='p'>)</span> <span class='p'>{</span>
+                        <span class='nv'>$item</span><span class='o'>-&gt;</span><span class='na'>attributes</span><span class='p'>[</span><span class='s1'>&#39;src&#39;</span><span class='p'>]</span> <span class='o'>=</span> <span class='nv'>$bundle</span><span class='p'>;</span>
+                <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
+                        <span class='nv'>$item</span><span class='o'>-&gt;</span><span class='na'>href</span> <span class='o'>=</span> <span class='nv'>$bundle</span><span class='p'>;</span>
+                <span class='p'>}</span>
+                <span class='k'>return</span> <span class='k'>true</span><span class='p'>;</span>
+            <span class='p'>}</span>
+
+            <span class='c1'>// Otherwise we do nothing with this item</span>
+            <span class='k'>return</span> <span class='k'>false</span><span class='p'>;</span>
+        <span class='p'>}</span>
+
+        <span class='k'>return</span> <span class='k'>true</span><span class='p'>;</span>
+    <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>Now we need to override the view helpers to add the filtering iterator</p>
+<div class='highlight'><pre><code class='php'><span class='cp'>&lt;?php</span>
+<span class='k'>class</span> <span class='nc'>DrSlump_View_Helper_HeadLink</span> <span class='k'>extends</span> <span class='nx'>Zend_View_Helper_HeadLink</span> <span class='p'>{</span>
+    <span class='sd'>/**</span>
+<span class='sd'>     * Override the default iterator with a filtering one</span>
+<span class='sd'>     *</span>
+<span class='sd'>     * @return BundlesFilterIterator</span>
+<span class='sd'>     */</span>
+    <span class='k'>public</span> <span class='k'>function</span> <span class='nf'>getIterator</span><span class='p'>()</span>
+    <span class='p'>{</span>
+        <span class='nv'>$iterator</span> <span class='o'>=</span> <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>getContainer</span><span class='p'>()</span><span class='o'>-&gt;</span><span class='na'>getIterator</span><span class='p'>();</span>
+        <span class='nv'>$bundles</span> <span class='o'>=</span> <span class='nx'>Zend_Registry</span><span class='o'>::</span><span class='na'>get</span><span class='p'>(</span><span class='s1'>&#39;bundles&#39;</span><span class='p'>);</span>
+
+        <span class='k'>return</span> <span class='k'>empty</span><span class='p'>(</span><span class='nv'>$bundles</span><span class='p'>)</span> <span class='o'>?</span> <span class='nv'>$iterator</span> <span class='o'>:</span> <span class='k'>new</span> <span class='nx'>BundlesFilterIterator</span><span class='p'>(</span> <span class='nv'>$iterator</span><span class='p'>,</span> <span class='nv'>$bundles</span> <span class='p'>);</span>
+    <span class='p'>}</span>
+<span class='p'>}</span>
+
+<span class='k'>class</span> <span class='nc'>DrSlump_View_Helper_HeadScript</span> <span class='k'>extends</span> <span class='nx'>Zend_View_Helper_HeadScript</span> <span class='p'>{</span>
+        <span class='sd'>/**</span>
+<span class='sd'>         * Override the default iterator with a filtering one</span>
+<span class='sd'>         *</span>
+<span class='sd'>         * @return BundlesFilterIterator</span>
+<span class='sd'>         */</span>
+        <span class='k'>public</span> <span class='k'>function</span> <span class='nf'>getIterator</span><span class='p'>()</span>
+        <span class='p'>{</span>
+                <span class='nv'>$iterator</span> <span class='o'>=</span> <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>getContainer</span><span class='p'>()</span><span class='o'>-&gt;</span><span class='na'>getIterator</span><span class='p'>();</span>
+                <span class='nv'>$bundles</span> <span class='o'>=</span> <span class='nx'>Zend_Registry</span><span class='o'>::</span><span class='na'>get</span><span class='p'>(</span><span class='s1'>&#39;bundles&#39;</span><span class='p'>);</span>
+ 
+                <span class='k'>return</span> <span class='k'>empty</span><span class='p'>(</span><span class='nv'>$bundles</span><span class='p'>)</span> <span class='o'>?</span> <span class='nv'>$iterator</span> <span class='o'>:</span> <span class='k'>new</span> <span class='nx'>BundlesFilterIterator</span><span class='p'>(</span> <span class='nv'>$iterator</span><span class='p'>,</span> <span class='nv'>$bundles</span> <span class='p'>);</span>
+        <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>Now we just need to map our small individual files with the bundle files in which they are contained:</p>
+<div class='highlight'><pre><code class='php'><span class='cp'>&lt;?php</span>
+<span class='nv'>$bundles</span> <span class='o'>=</span> <span class='k'>array</span><span class='p'>(</span>
+    <span class='c1'>// For jQuery we use a public CDN</span>
+    <span class='s1'>&#39;http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js&#39;</span> <span class='o'>=&gt;</span> <span class='k'>array</span><span class='p'>(</span>
+        <span class='s1'>&#39;/js/jquery-1.3.2.js&#39;</span>
+    <span class='p'>),</span>
+    <span class='s1'>&#39;/resources/bundle-plugins.js&#39;</span> <span class='o'>=&gt;</span> <span class='k'>array</span><span class='p'>(</span>
+        <span class='s1'>&#39;/js/jquery/jquery.event.drag.js&#39;</span><span class='p'>,</span>
+        <span class='s1'>&#39;/js/jquery/password_strength_plugin.js&#39;</span>
+    <span class='p'>),</span>
+    <span class='s1'>&#39;/resources/bundle.css&#39;</span> <span class='o'>=&gt;</span> <span class='k'>array</span><span class='p'>(</span>
+        <span class='s1'>&#39;/css/reset.css&#39;</span><span class='p'>,</span>
+        <span class='s1'>&#39;/css/global.css&#39;</span><span class='p'>,</span>
+        <span class='s1'>&#39;/css/forms.css&#39;</span>
+    <span class='p'>)</span>
+<span class='p'>);</span>
+
+<span class='c1'>// Store the bundles configuration in the registry so that it can be fetched by the view helpers</span>
+<span class='nx'>Zend_Registry</span><span class='o'>::</span><span class='na'>set</span><span class='p'>(</span><span class='s1'>&#39;bundles&#39;</span><span class='p'>,</span> <span class='nv'>$bundles</span><span class='p'>);</span>
+</code></pre></div>
+<p>When defining the bundles mapping we&#8217;re assigning the bundle URL as key to an array of the individual files URLs we&#8217;re using in the code.</p>
+
+<blockquote>
+<p>Note: This code does <strong>NOT</strong> create the bundles. There are several tools available for that task. The purpose of the examples above is to show how to use those bundles in an application without having to think about them when coding or even apply them to an existing application without having to modify the source code.</p>
+</blockquote>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/runtime-annotations-based-lexer-generator">Runtime, annotations based, lexer generator</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Aug 14, 2009
+    — Filled in Code
+    
+      and tagged as
+      lexer, parsing, php, and tokenizer
+    
+
+    <a class="entry-comments" href="/blog/runtime-annotations-based-lexer-generator/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Just a quick post to publish this class. It allows to easily create lexers (or lexical scanners or tokenizers) by either extending the class or pointing it to a class or object.</p>
+
+<p>Takes advantage of PHP&#8217;s Reflection API to explore the document blocks of your class looking for special annotations describing patterns (regular expressions) and rules.</p>
+
+<p>Some features:</p>
+
+<ul>
+<li>&#8220;First to match&#8221; and &#8220;longest match&#8221; lexing modes.</li>
+
+<li>States based lexer with support for a states stack</li>
+
+<li>Rules can consume, ignore, repeat in a different state or repeat skipping the rule just matched</li>
+
+<li>Implements the iterator interface so it can be used in foreach() loops for example</li>
+
+<li>Reports lexing failures indicating the position in the text plus the line and column</li>
+
+<li>Caches the internal lexer information so the annotations are only parsed once</li>
+
+<li>Allows to save and restore the internal lexer information so it can persisted and cached between requests</li>
+</ul>
+<script src='http://gist.github.com/167494.js?file=AnnotationsLexerGenerator.php'>
+</script>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/html5-goodness-real-world">Finally HTML5 goodness for the real world</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Apr 10, 2009
+    — Filled in Technology
+    
+      and tagged as
+      webdev, mozilla, firefox, and html
+    
+
+    <a class="entry-comments" href="/blog/html5-goodness-real-world/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Firefox 3.1b3 has arrived and it&#8217;s stuffed with a ton of new web technologies. Most of the stuff comes from the <a href='http://www.whatwg.org/'>WhatWG</a> working drafts, which should mean that major browser vendors (Mozilla, Microsoft, Opera, Apple and Google) are aware of the specifications and will incorporate them at some point.</p>
+
+<p>I love this release of Firefox because it is really a giant step forward for web developers, stuff like <a href='http://www.whatwg.org/specs/web-workers/current-work'>web workers</a> (a simple threading scheme for web applications), cross site XMLHttpRequest via <a href='http://dev.w3.org/2006/waf/access-control'>access control in the server</a>, native JSON support (really fast!), <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/editing.html#dnd'>Drag-n-Drop events</a> and <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html'>Offline persistance</a>.</p>
+
+<p>Together with the inclusion by default of the <a href='https://wiki.mozilla.org/JavaScript:TraceMonkey'>TraceMonkey javascript engine</a>, these features put Firefox again as the ultimate web development platform.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+
+
+
+  <div id="pagination">
+    
+      <a class="prev" href="/page2/">&laquo; Newer</a>
+    
+  
+    
+      
+        <a class="num" href="/">1</a>
+      
+    
+      
+        <a class="num" href="/page2/">2</a>
+      
+    
+      
+        <span class="num">3</span>
+      
+    
+      
+        <a class="num" href="/page4/">4</a>
+      
+    
+      
+        <a class="num" href="/page5/">5</a>
+      
+    
+      
+        <a class="num" href="/page6/">6</a>
+      
+    
+      
+        <a class="num" href="/page7/">7</a>
+      
+    
+      
+        <a class="num" href="/page8/">8</a>
+      
+    
+      
+        <a class="num" href="/page9/">9</a>
+      
+    
+      
+        <a class="num" href="/page10/">10</a>
+      
+    
+      
+        <a class="num" href="/page11/">11</a>
+      
+    
+      
+        <a class="num" href="/page12/">12</a>
+      
+    
+  
+    
+      <a class="next" href="/page4/">Older &raquo;</a>
+    
+  </div>
+
+
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

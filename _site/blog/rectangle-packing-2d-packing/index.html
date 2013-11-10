@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Rectangle Packing (2D packing) | Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+
+ 
+<div class="entry">
+  <h2>
+    
+    <span>Rectangle Packing (2D packing)</span>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Jun 15, 2007
+    — Filled in Code
+    
+      and tagged as
+      javascript
+    
+
+    <a class="entry-comments" href="/blog/rectangle-packing-2d-packing/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>I’m working on a little thing which I don’t want to speak about just now, lets see if I can get it to do what I want first before making it public. However for that project I needed to pack several small rectangles of varying dimensions into a bigger one without them overlapping.</p>
+
+<p>At first it seem like an easy task but the more I thought about it the more difficult it was. After a bit of research I found out that until today this seems to be a non resolved problem, there are algorithms which offer a pretty decent approximation to the optimal result though. The problem is commonly known as the Bin Packing problem and in this case I needed to work with two dimensional objects (rectangles) so it gets a lot more complicated.</p>
+
+<p>After more googling I found an article by Jim Scott with pseudo code to solve a similar problem, the article explains on how to pack several lightmaps into a single texture. It was the easiest to understand algorithm I had found so I went ahead and implemented it in PHP. I had it in a few minutes but I wanted to fine tune the results by feeding it the rectangles by different sorting criteria, since it seems to be a good way to achieve the best results. Well, I got tired to slowly generating the image in PHP to check the results with every minor variation so I implemented a JavaScript version which allows to see the result in real time.</p>
+
+<p>This algorithm can be used for a wide variety of problems, from packaging small sprites in a big image to allocate tasks in complex projects (use the width for the team developers and the height for the time).</p>
+
+<p>A simple usage example could be as follows:</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>coords</span><span class='p'>,</span>
+    <span class='nx'>packer</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>NETXUS</span><span class='p'>.</span><span class='nx'>RectanglePacker</span><span class='p'>(</span> <span class='mi'>512</span><span class='p'>,</span> <span class='mi'>512</span> <span class='p'>);</span>
+
+<span class='k'>for</span> <span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span><span class='o'>=</span><span class='mi'>0</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>&lt;</span><span class='nx'>images</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='nx'>coords</span> <span class='o'>=</span> <span class='nx'>packer</span><span class='p'>.</span><span class='nx'>findCoords</span><span class='p'>(</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>width</span><span class='p'>,</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>height</span> <span class='p'>);</span>
+    <span class='nx'>alert</span><span class='p'>(</span> <span class='s1'>&#39;Image of &#39;</span> <span class='o'>+</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>width</span> <span class='o'>+</span> <span class='s1'>&#39;x&#39;</span> <span class='o'>+</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>height</span> <span class='o'>+</span>
+         <span class='s1'>&#39; allocated at &#39;</span> <span class='o'>+</span> <span class='nx'>coords</span><span class='p'>.</span><span class='nx'>x</span> <span class='o'>+</span> <span class='s1'>&#39;x&#39;</span> <span class='o'>+</span> <span class='nx'>coords</span><span class='p'>.</span><span class='nx'>y</span>
+    <span class='p'>);</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>I’ve put up a <a href='/demos/RectanglePacker.html'>demo</a> so you can try it and see the results with different parameters. Tip: the best results seems to be with the blocks sorted by the magic method and reversed.</p>
+
+<p>You can <a href='/files/RectanglePacker.js'>download the source code from this link</a>.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+<div id="comments">
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    var disqus_developer = (/localhost|github|dev/i).test(location.host);
+    
+    var disqus_url = 'http://pollinimini.net/blog/rectangle-packing-2d-packing';
+    
+  </script>
+  <script type="text/javascript" src="http://disqus.com/forums/pollinimini/embed.js"></script>
+   
+  <noscript>
+    <a href="http://pollinimini.disqus.com/?url=ref">View the discussion thread.</a>
+  </noscript>
+</div>
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

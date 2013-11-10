@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Doing Ajax? you'll need transactions! | Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+
+ 
+<div class="entry">
+  <h2>
+    
+    <span>Doing Ajax? you'll need transactions!</span>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Jul 10, 2006
+    — Filled in Code
+    
+      and tagged as
+      webdev and javascript
+    
+
+    <a class="entry-comments" href="/blog/ajax-you-will-need-transactions/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>In an embarrassing attempt to bring some more visits to this blog I’ll start to post about buzzwords. After some months of fighting against it I’ve finally understood that there is no point in teaching people that <abbr title='Asynchronous Javascript and XML'>AJAX</abbr>, Web 2.0 and the like are just silly buzzwords about quite old technologies. So from now on I’ll get into the bandwagon and start using those buzzwords.</p>
+
+<p>Getting into the stuff that matters, lets start with the basics. As you should already know, the web works on top of the HTTP protocol, which by design is based on a request-response paradigm. It’s a proven design which works like a charm for the typical web, where static pages are loaded from an URL, however the Web is evolving to a new kind of pages. The current trend is to make web pages which act like the typical thin client, where the bulk of the operations and domain logic (model) is performed on the server but the application flow (controller) and display (view) is handled on the client side with the help of JavaScript and <abbr title='Document Object Model'>DOM</abbr>.</p>
+
+<p>Looking at the whole picture, you’ll need perspective here, <abbr title='Asynchronous Javascript and XML'>AJAX</abbr> web pages are Web Service Brokers. This exposes a big problem, since we’re sill using server side software focussed (read optimized) on the traditional web, while the client side is moving to support the thin client paradigm. The main trouble here is the design concept of the web where each page is an atomic unit, so we need to take some considerations when developing ajaxified web pages if we don’t want to hurt performance seriously.</p>
+
+<p>Most <abbr title='Asynchronous Javascript and XML'>AJAX</abbr> frameworks expose some simple examples to demonstrate their functionality. They work ok, they do quite cool things, but looking at them a bit closer there are some grey areas. Besides the popular live-search, update on checkbox click or the plain spellchecker, there is a lot more functionality promised by the AJAX hype. Take for example a datagrid widget, like an Excel spreadsheet, there are some complex processes running on the background when working with it. When editting a cell we need to send the new value to the server, check if it worked ok and fetch any other updates on calculated cells which could have been affected by that change. So we have several weak points (mainly by the inherent network unreliability) which would need checks. In the previous example of the datagrid, imagine that the fetch of the affected cells fails, the application state on the client side and on the server side will be different and this is a major concern when working with thin clients.</p>
+
+<p>To solve this problem we have to use transactions (already popular on the <abbr title='Relational Database Management System'>RDBMS</abbr> world). Transactions will allow us to emulate the web principle that each page/action is atomic. In the case that something goes wrong we can rollback the changes and our application state will be kept the same on both sides.</p>
+
+<p>Extending on this idea, we can even optimize the request-response cycle by using an Unit of Work pattern for example. We compose a list of actions and send it when finished to the server instead of sending individual actions. Network latency is always an issue and the asynchronous nature of <abbr title='Asynchronous Javascript and XML'>AJAX</abbr> is not used too often in practice, when we make a change we expect an inmediate update. By packing the actions in Units of Work we can optimize the client-server interaction and support transactions quite easily.</p>
+
+<p>Remember that for the tipical <abbr title='Remote Procedure Call'>RPC</abbr> the web server needs to spawn (or fork) a new process, load the dynamic language interpretter, parse thousends of lines of code, perform a DB connection and do the actual work. Even when having a properly setup backend (opcode cache, fast-cgi), the overhead of a RPC is huge. Packing actions together seems like a great solution for performance problems.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+<div id="comments">
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    var disqus_developer = (/localhost|github|dev/i).test(location.host);
+    
+  </script>
+  <script type="text/javascript" src="http://disqus.com/forums/pollinimini/embed.js"></script>
+   
+  <noscript>
+    <a href="http://pollinimini.disqus.com/?url=ref">View the discussion thread.</a>
+  </noscript>
+</div>
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

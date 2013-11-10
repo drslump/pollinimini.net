@@ -1,0 +1,32 @@
+<div class="entry">
+  <h2>
+    {% if detail %}
+    <span>{{ post.title }}</span>
+    {% else %}
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    {% endif %}
+  </h2>
+   
+  <div class="entry-meta">
+    {{ post.date | date:'%b %d, %Y' }}
+    — Filled in {{ post.categories | array_to_sentence_string | capitalize }}
+    {% unless post.tags == empty %}
+      and tagged as
+      {{ post.tags | array_to_sentence_string }}
+    {% endunless %}
+
+    <a class="entry-comments" href="{{ post.url }}/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    {% if detail %}
+        {{ content }}
+    {% else %}
+        {{ post.content }}
+    {% endif %}
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 

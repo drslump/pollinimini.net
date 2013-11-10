@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>PHP post_max_size issue | Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+
+ 
+<div class="entry">
+  <h2>
+    
+    <span>PHP post_max_size issue</span>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Aug 03, 2010
+    — Filled in Code
+    
+      and tagged as
+      php, upload, and ini
+    
+
+    <a class="entry-comments" href="/blog/php-post-max-size/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>PHP&#8217;s ability to manage uploaded files has always left mixing feelings in me, on one hand it&#8217;s really trivial to implement file upload functionality on PHP scripts but in the other, managing big files uploads (just anything above a couple megabytes) is far from reliable.</p>
+
+<p>Recently a couple solutions became popular to implement <em>progressive uploads</em> in PHP, <a href='http://pecl.php.net/package/uploadprogress'>PECL&#8217;s uploadprogress extension</a> and recent <a href='http://www.php.net/manual/es/apc.configuration.php#ini.apc.rfc1867'>APC</a> versions. But anyway, the default PHP behaviour when uploading a file is to wait until it&#8217;s been fully transferred to the server before executing the php script.</p>
+
+<p>This design decision from the PHP folks greatly simplifies the most common case, since you always get the full file when your PHP code runs, but also means that <em>big</em> files can cause some serious trouble. To defend itself, PHP has a few ini options that tune its ability to work with big files.</p>
+
+<p><code>upload_max_filesize</code> tells PHP the maximum size an uploaded file can have, files bigger will be reported as an error in the <code>$_FILES</code> array. <code>max_input_time</code> control the maximum time PHP can spend receiving data from the client, this is important because if you have many visitors with slow connections (or a malevolent attacker) a lot of PHP processes will be idling in memory collecting data slowly, consuming your server resources and potentially provoking your server to become unresponsive. Finally, we have <code>post_max_size</code>, which is a bit tricky, it limits the maximum amount of data a request from the client can hold. The tricky part is that if that limit is reached PHP won&#8217;t error out or signal the problem anyhow to your script, instead it will continue normal script execution but won&#8217;t populate <code>$_POST</code> or <code>$_FILES</code> superglobals, leaving them empty.</p>
+
+<p>So if your <code>post_max_size</code> is set to 2Mb and a client uploads a 3Mb file, nor <code>$_POST</code> neither <code>$_FILES</code> will have any content. Even if you set your <code>upload_max_filesize</code> to 2Mb or below, if size of the file (or files) is bigger you will find yourself with those superglobals empty.</p>
+
+<p>There is however a way to detect this condition, like shown in the following code snippet.</p>
+<div class='highlight'><pre><code class='php'><span class='cp'>&lt;?php</span>
+
+<span class='k'>if</span> <span class='p'>(</span><span class='nb'>in_array</span><span class='p'>(</span><span class='nv'>$_SERVER</span><span class='p'>[</span><span class='s1'>&#39;REQUEST_METHOD&#39;</span><span class='p'>],</span> <span class='k'>array</span><span class='p'>(</span><span class='s1'>&#39;POST&#39;</span><span class='p'>,</span> <span class='s1'>&#39;PUT&#39;</span><span class='p'>)))</span> <span class='p'>{</span>
+  <span class='k'>if</span> <span class='p'>(</span><span class='k'>empty</span><span class='p'>(</span><span class='nv'>$_POST</span><span class='p'>)</span> <span class='o'>&amp;&amp;</span> <span class='k'>empty</span><span class='p'>(</span><span class='nv'>$_FILES</span><span class='p'>))</span> <span class='p'>{</span>
+
+    <span class='c1'>// Get maximum size and meassurement unit</span>
+    <span class='nv'>$max</span> <span class='o'>=</span> <span class='nb'>ini_get</span><span class='p'>(</span><span class='s1'>&#39;post_max_size&#39;</span><span class='p'>);</span>
+    <span class='nv'>$unit</span> <span class='o'>=</span> <span class='nx'>substr</span><span class='p'>(</span><span class='nv'>$max</span><span class='p'>,</span> <span class='o'>-</span><span class='mi'>1</span><span class='p'>);</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nb'>is_numeric</span><span class='p'>(</span><span class='nv'>$unit</span><span class='p'>))</span> <span class='p'>{</span>
+      <span class='nv'>$max</span> <span class='o'>=</span> <span class='nx'>substr</span><span class='p'>(</span><span class='nv'>$max</span><span class='p'>,</span> <span class='mi'>0</span><span class='p'>,</span> <span class='o'>-</span><span class='mi'>1</span><span class='p'>);</span>
+    <span class='p'>}</span>
+
+    <span class='c1'>// Convert to bytes</span>
+    <span class='k'>switch</span> <span class='p'>(</span><span class='nx'>strtoupper</span><span class='p'>(</span><span class='nv'>$unit</span><span class='p'>))</span> <span class='p'>{</span>
+      <span class='k'>case</span> <span class='s1'>&#39;G&#39;</span><span class='o'>:</span>
+        <span class='nv'>$max</span> <span class='o'>*=</span> <span class='mi'>1024</span><span class='p'>;</span>
+      <span class='k'>case</span> <span class='s1'>&#39;M&#39;</span><span class='o'>:</span>
+        <span class='nv'>$max</span> <span class='o'>*=</span> <span class='mi'>1024</span><span class='p'>;</span>
+      <span class='k'>case</span> <span class='s1'>&#39;K&#39;</span><span class='o'>:</span>
+        <span class='nv'>$max</span> <span class='o'>*=</span> <span class='mi'>1024</span><span class='p'>;</span>
+    <span class='p'>}</span>
+
+    <span class='c1'>// Assert the content length is within limits</span>
+    <span class='nv'>$length</span> <span class='o'>=</span> <span class='nv'>$_SERVER</span><span class='p'>[</span><span class='s1'>&#39;CONTENT_LENGTH&#39;</span><span class='p'>];</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='nv'>$max</span> <span class='o'>&lt;</span> <span class='nv'>$length</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='k'>throw</span> <span class='k'>new</span> <span class='nx'>Exception</span><span class='p'>(</span><span class='s1'>&#39;Maximum content length size (&#39;</span> <span class='o'>.</span> <span class='nv'>$max</span> <span class='o'>.</span> <span class='s1'>&#39;) exceeded&#39;</span><span class='p'>);</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>With that code in place you can gracely detect the issue and act accordingly by showing the user an error page explaining what just happened for example.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+<div id="comments">
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    var disqus_developer = (/localhost|github|dev/i).test(location.host);
+    
+  </script>
+  <script type="text/javascript" src="http://disqus.com/forums/pollinimini/embed.js"></script>
+   
+  <noscript>
+    <a href="http://pollinimini.disqus.com/?url=ref">View the discussion thread.</a>
+  </noscript>
+</div>
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

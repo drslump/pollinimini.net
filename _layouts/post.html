@@ -1,0 +1,24 @@
+---
+layout: default
+---
+ 
+{% assign post = page %}
+{% assign detail = true %}
+ 
+{% include post.html %}
+
+<div id="comments">
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    var disqus_developer = (/localhost|github|dev/i).test(location.host);
+    {% if page.disqus %}
+    var disqus_url = '{{ page.disqus }}';
+    {% endif %}
+  </script>
+  <script type="text/javascript" src="http://disqus.com/forums/{{ site.disqus.id }}/embed.js"></script>
+   
+  <noscript>
+    <a href="http://{{ site.disqus.id }}.disqus.com/?url=ref">View the discussion thread.</a>
+  </noscript>
+</div>

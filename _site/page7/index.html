@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/automatic-login-ssh-putty">Automatic login to SSH with Putty</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Jul 10, 2007
+    — Filled in Technology
+    
+      and tagged as
+      ssh and putty
+    
+
+    <a class="entry-comments" href="/blog/automatic-login-ssh-putty/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Go to the <a href='http://www.chiark.greenend.org.uk/~sgtatham/putty'>PuTTY homepage</a> and download PuTTY, PuTTYgen and Pageant. Put them in an easily accessible directory like <code>%PROGRAMFILES%\Putty</code>.</p>
+
+<p>Launch <code>puttygen.exe</code> and click on <em>Generate</em>, then move your mouse in the space below the progress bar to create some entropy for the key randomness. Once the key is generated lets complete the available fields:</p>
+
+<ul>
+<li><strong>Key comment</strong> is just a comment so anything will do, putting username-putty seems quite logical.</li>
+
+<li><strong>Key passphrase</strong> is actually a password to unlock the key. Put something complex in here but make sure you’ll remember it in the future!!!</li>
+
+<li><strong>Confirm passphrase</strong>, here you just input again the password to confirm you know which is it.</li>
+</ul>
+
+<p>Now click on <em>Save private key</em> to store it permanently on your hard disk. Choose a secure place for it, I can’t strength enough how important is that this key remains secret. A good location could be <code>%USERPROFILE%\ssh\putty.ppk</code>.</p>
+
+<p>Do not close PuTTYgen just yet, we need to copy the public key to our server (or servers). Connect to the remote server with your username and password as normal, go to your home directory and create a directory named <code>.ssh</code> if it doesn’t exists already. Create a text file named <code>authorized_keys2</code> in the <code>.ssh/</code> directory, inside that file copy the public key from PuTTYgen in a single line, save the file and exit the shell. Make sure the <code>.ssh</code> directory and its contents are only accessible by you (<code>chmod -R og= .ssh</code>). Repeat this step for each server you want to access with your public key.</p>
+
+<p>The next step is to configure PAgeant (PuTTY Authentication Agent) to automatically start with Windows. Just create a shortcut in your <em>Startup folder</em>, the target should be something similar to <code>%PROGRAMFILES%\Putty\pageant.exe &quot;%USERPROFILE%\ssh\putty.ppk&quot;</code>, change it to suit the paths you’ve used.</p>
+
+<p>Double click it to avoid having to restart to launch it, a small pop-up window should show asking for your passphrase, type it and press Ok. If you have typed the correct passphrase a small blueish icon should show on you system tray, right click it to start a new session or launch a pre-configured one. If everything is allright PAgeant should take care of authenticate you.</p>
+
+<p>Just a simple tip in case you don’t know, you can specify an username together with the server address by using this syntax: <em>username@server.com</em>. This way the authentication is completely automatic.</p>
+
+<p>There are also another couple of great companion tools from PuTTY: PSCP and PSFTP. The first is a command line tool to transfer files securely between computers, the second is a text mode FTP client using a secure SSH connection. Specially the PSCP can be handy to be used in batch files to automatize some tasks.</p>
+
+<p><strong>PLEASE READ:</strong> Be careful with using public keys authentication to connect to a server. The steps I described are ok if you have the access to your computer restricted, do not leave PAgeant running while you’re away from your computer!</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/los-sitios-web-deberian-ser-faciles-de-crear">Los sitios web deberían ser fáciles de crear</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Jul 03, 2007
+    — Filled in Technology
+    
+      and tagged as
+      webdev, lamp, and mvc
+    
+
+    <a class="entry-comments" href="/blog/los-sitios-web-deberian-ser-faciles-de-crear/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Este es un post <em>filosófico</em> que llevo algún tiempo preparando para aclarar mis ideas. Como dice el título, <em>los sitios web (aplicaciones web incluidas) deberían ser fáciles de crear</em>. El sitio web típico tiene unas pocas docenas de páginas, un par de formularios y sindicación RSS como mucho. No parece que sea algo muy complejo, menos aun si tenemos en cuenta que la infraestructura para que funcionen es asequible, contrastada y potente. Algunos (yo me incluía en ese grupo hasta hace unos meses) culpan el hecho de la complejidad de crear un buen sitio web a lo enrevesado del entorno, un entorno no controlado como es un navegador web, donde las sutiles diferencias entre versiones y marcas suponen elevar exponencialmente la complejidad de la creación. La realidad en mi opinión es distinta.</p>
+
+<p>El paradigma de programación más utilizado actualmente para el desarrollo de sitios web es el popular MVC (Model-View-Controller), algo que ya tiene unos cuantos años pero que solo en los últimos dos o tres se ha empezado a utilizar para el desarrollo de webs simples. La idea de ese concepto es que dividimos el desarrollo en tres capas diferenciadas. El Modelo se encarga de hacer el acceso a los datos uniforme, la lógica de negocio queda encapsulada en esta capa. La Vista se encarga de la presentación de la información, formateando los datos obtenidos del Modelo de una manera atractiva para el visitante. Por último el Controlador es quien controla quien puede ver que y bajo que circunstancias, además de ser el pegamento que une todas las piezas. Pues bien, resulta que para un sitio web normalito no necesitamos tantas capas, porque la realidad es que esas capas ya existen en la infraestructura utilizada, como por ejemplo con un stack LAMP.</p>
+
+<p>Apache no es más que un Controlador, MySQL es un Modelo y los ficheros HTML son la Vista. Estamos de acuerdo en que esa infraestructura es muy genérica y que trabajar con ella es como construir una casa con herramientas manuales. Pero por que ocultar totalmente esas herramientas para substituirlas por otras nuevas más lentas y menos flexibles? Hablemos de REST, la filosofía detrás de la World Wide Web.</p>
+
+<p>REST es el diseño en el que se modeló la web, se basa en que hay un conjunto de recursos identificados globalmente (la conocida URL) que pueden obtenerse en diferentes formatos (HTML, XML, PDF…). El diseño es realmente elegante y lo mejor de todo es que es algo probado y contrastado durante casi dos décadas. Mi conclusión es que si hacemos un sitio web este ha de hacerse en base a los principios básicos del medio donde reside, de lo contrario sería como intentar hacer un barco para ir por una carretera, seguro que podemos añadir ruedas pero seguirá pareciendo un barco en vez de un coche.</p>
+
+<p>Así que juntando lo comentado arriba sobre LAMP como framework con el diseño REST, podemos obtener un sistema muy potente, flexible y fácil de utilizar. Para empezar tenemos que aprovechar la infraestructura disponible, y aprovecharla con criterio, como por ejemplo no almacenar las páginas HTML en una base de datos sino en el disco. A primera vista vemos que solo con el servidor web, la base de datos y el HTML estamos como hace 10 años, editando los ficheros con un editor y subiéndolos por FTP para publicarlos. Necesitamos algo que complete esas herramientas y ese algo son los lenguajes interpretados, ya sea PHP, Perl, Python, Java o Ruby. Estos lenguajes nos permitirán crear el pegamento necesario para ofrecer soluciones modernas de una manera simple y escalable. La idea es volver unos 5 años hacia atrás y retomar la costumbre de hacer una web con ladrillos, utilizando scripts prácticamente independientes para crearla. Después de todo PHPNuke fue popular pero no era la solución, aunque detrás de él hayan aparecido miles de sucesores intentando solucionar sus problemas, que lo único que han conseguido es ocultar esos problemas con capas y capas de complejidad añadida.</p>
+
+<p>En un próximo artículo comentaré sobre una posible implementación de todo esto. La idea básica es la de quitar capas de complejidad de nuestros scripts para poder concentrarnos en la funcionalidad y el contenido, eliminando posibles puntos negros de errores y aprovechando la escalabilidad inherente a la web.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/rectangle-packing-2d-packing">Rectangle Packing (2D packing)</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Jun 15, 2007
+    — Filled in Code
+    
+      and tagged as
+      javascript
+    
+
+    <a class="entry-comments" href="/blog/rectangle-packing-2d-packing/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>I’m working on a little thing which I don’t want to speak about just now, lets see if I can get it to do what I want first before making it public. However for that project I needed to pack several small rectangles of varying dimensions into a bigger one without them overlapping.</p>
+
+<p>At first it seem like an easy task but the more I thought about it the more difficult it was. After a bit of research I found out that until today this seems to be a non resolved problem, there are algorithms which offer a pretty decent approximation to the optimal result though. The problem is commonly known as the Bin Packing problem and in this case I needed to work with two dimensional objects (rectangles) so it gets a lot more complicated.</p>
+
+<p>After more googling I found an article by Jim Scott with pseudo code to solve a similar problem, the article explains on how to pack several lightmaps into a single texture. It was the easiest to understand algorithm I had found so I went ahead and implemented it in PHP. I had it in a few minutes but I wanted to fine tune the results by feeding it the rectangles by different sorting criteria, since it seems to be a good way to achieve the best results. Well, I got tired to slowly generating the image in PHP to check the results with every minor variation so I implemented a JavaScript version which allows to see the result in real time.</p>
+
+<p>This algorithm can be used for a wide variety of problems, from packaging small sprites in a big image to allocate tasks in complex projects (use the width for the team developers and the height for the time).</p>
+
+<p>A simple usage example could be as follows:</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>coords</span><span class='p'>,</span>
+    <span class='nx'>packer</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>NETXUS</span><span class='p'>.</span><span class='nx'>RectanglePacker</span><span class='p'>(</span> <span class='mi'>512</span><span class='p'>,</span> <span class='mi'>512</span> <span class='p'>);</span>
+
+<span class='k'>for</span> <span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span><span class='o'>=</span><span class='mi'>0</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>&lt;</span><span class='nx'>images</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='nx'>coords</span> <span class='o'>=</span> <span class='nx'>packer</span><span class='p'>.</span><span class='nx'>findCoords</span><span class='p'>(</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>width</span><span class='p'>,</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>height</span> <span class='p'>);</span>
+    <span class='nx'>alert</span><span class='p'>(</span> <span class='s1'>&#39;Image of &#39;</span> <span class='o'>+</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>width</span> <span class='o'>+</span> <span class='s1'>&#39;x&#39;</span> <span class='o'>+</span> <span class='nx'>images</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>height</span> <span class='o'>+</span>
+         <span class='s1'>&#39; allocated at &#39;</span> <span class='o'>+</span> <span class='nx'>coords</span><span class='p'>.</span><span class='nx'>x</span> <span class='o'>+</span> <span class='s1'>&#39;x&#39;</span> <span class='o'>+</span> <span class='nx'>coords</span><span class='p'>.</span><span class='nx'>y</span>
+    <span class='p'>);</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>I’ve put up a <a href='/demos/RectanglePacker.html'>demo</a> so you can try it and see the results with different parameters. Tip: the best results seems to be with the blocks sorted by the magic method and reversed.</p>
+
+<p>You can <a href='/files/RectanglePacker.js'>download the source code from this link</a>.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/hex2dec-dec2hex">Hex2Dec and Dec2Hex</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Jun 11, 2007
+    — Filled in Code
+    
+      and tagged as
+      javascript
+    
+
+    <a class="entry-comments" href="/blog/hex2dec-dec2hex/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>For <em>secret reasons</em> I need to usually convert hex strings to decimal notation. This can be easily done with a scientific calculator, like the one supplied with Windows, but it’s slow and I’m usually in a hurry to convert them :)</p>
+
+<p>So I took a look at <a href='http://www.greasespot.net/'>GreaseMonkey</a>, which is an extension for Firefox which allows to modify a web page once rendered with a simple javascript file.</p>
+
+<p>To install it you’ll first need to have <a href='http://www.greasespot.net/'>GreaseMonkey</a> installed and activated (a little monkey face on Firefox’s status bar), then click on this link <a href='/files/satkeystringconversor.user.js'>satkeystringconversor.user.js</a></p>
+
+<p>Here is the highlighted source code so you can review it easily. It’s a pretty simple script which traverses the DOM performing regular expression tests on text nodes and converting the matched strings into span elements with an <em>onclick</em> behaviour.</p>
+<div class='highlight'><pre><code class='javascript'><span class='c1'>// ==UserScript==</span>
+<span class='c1'>// @name           Sat key string conversor</span>
+<span class='c1'>// @namespace      http://pollinimini.net</span>
+<span class='c1'>// @description    Converts satelite key strings from hex to dec or vice versa</span>
+<span class='c1'>// @include        http://www.satscreen.ws/forum/*</span>
+<span class='c1'>// @include      https://www.blogger.com/*</span>
+<span class='c1'>// @include      http://floresd.blogspot.com/*</span>
+<span class='c1'>// @include      http://galeon.com/tusflores/*</span>
+<span class='c1'>// ==/UserScript==</span>
+<span class='kd'>function</span> <span class='nx'>HEXDEC</span> <span class='p'>(</span> <span class='nx'>node</span> <span class='p'>)</span> <span class='p'>{</span>
+
+  <span class='kd'>function</span> <span class='nx'>hex2dec</span><span class='p'>(</span><span class='nx'>hex</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='kd'>var</span> <span class='nx'>dec</span> <span class='o'>=</span> <span class='p'>[],</span>
+      <span class='nx'>re</span> <span class='o'>=</span> <span class='sr'>/([0-9A-Za-z]{2})\s*/g</span><span class='o'>|&gt;</span><span class='p'>,</span>
+      <span class='nx'>m</span><span class='p'>,</span>
+      <span class='nx'>conv</span><span class='p'>;</span>
+    <span class='k'>while</span> <span class='p'>(</span><span class='nx'>m</span> <span class='o'>=</span> <span class='nx'>re</span><span class='p'>.</span><span class='nx'>exec</span><span class='p'>(</span><span class='nx'>hex</span><span class='p'>))</span> <span class='p'>{</span>
+      <span class='nx'>conv</span> <span class='o'>=</span> <span class='nb'>parseInt</span><span class='p'>(</span><span class='nx'>m</span><span class='p'>[</span><span class='mi'>1</span><span class='p'>],</span> <span class='mi'>16</span><span class='p'>);</span>
+      <span class='nx'>dec</span><span class='p'>.</span><span class='nx'>push</span><span class='p'>(</span> <span class='p'>(</span><span class='nx'>conv</span> <span class='o'>&lt;</span> <span class='mi'>100</span> <span class='o'>?</span> <span class='p'>(</span> <span class='nx'>conv</span> <span class='o'>&lt;</span> <span class='mi'>10</span> <span class='o'>?</span> <span class='s1'>&#39;00&#39;</span> <span class='o'>:</span> <span class='s1'>&#39;0&#39;</span> <span class='p'>)</span> <span class='o'>:</span> <span class='s1'>&#39;&#39;</span><span class='p'>)</span> <span class='o'>+</span> <span class='nx'>conv</span> <span class='p'>);</span>
+    <span class='p'>}</span>
+    <span class='k'>return</span> <span class='nx'>dec</span><span class='p'>.</span><span class='nx'>join</span><span class='p'>(</span><span class='s1'>&#39; &#39;</span><span class='p'>);</span>
+  <span class='p'>}</span>
+
+  <span class='kd'>function</span> <span class='nx'>dec2hex</span><span class='p'>(</span><span class='nx'>dec</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='kd'>var</span> <span class='nx'>hex</span> <span class='o'>=</span> <span class='p'>[],</span>
+      <span class='nx'>re</span> <span class='o'>=</span> <span class='sr'>/([0-9]{3})\s*/g</span><span class='o'>|&gt;</span><span class='p'>,</span>
+      <span class='nx'>m</span><span class='p'>,</span>
+      <span class='nx'>conv</span><span class='p'>;</span>
+    <span class='k'>while</span> <span class='p'>(</span><span class='nx'>m</span> <span class='o'>=</span> <span class='nx'>re</span><span class='p'>.</span><span class='nx'>exec</span><span class='p'>(</span><span class='nx'>dec</span><span class='p'>))</span> <span class='p'>{</span>
+      <span class='nx'>conv</span> <span class='o'>=</span> <span class='p'>(</span><span class='nx'>m</span><span class='p'>[</span><span class='mi'>1</span><span class='p'>]</span><span class='o'>-</span><span class='mi'>0</span><span class='p'>).</span><span class='nx'>toString</span><span class='p'>(</span><span class='mi'>16</span><span class='p'>).</span><span class='nx'>toUpperCase</span><span class='p'>();</span>
+      <span class='nx'>hex</span><span class='p'>.</span><span class='nx'>push</span><span class='p'>(</span> <span class='nx'>conv</span><span class='p'>.</span><span class='nx'>length</span> <span class='o'>&lt;</span> <span class='mi'>2</span> <span class='o'>?</span> <span class='s1'>&#39;0&#39;</span><span class='o'>+</span><span class='nx'>conv</span> <span class='o'>:</span> <span class='nx'>conv</span> <span class='p'>);</span>
+    <span class='p'>}</span>
+    <span class='k'>return</span> <span class='nx'>hex</span><span class='p'>.</span><span class='nx'>join</span><span class='p'>(</span><span class='s1'>&#39; &#39;</span><span class='p'>);</span>
+  <span class='p'>}</span>
+
+  <span class='kd'>function</span> <span class='nx'>swapHexDec</span><span class='p'>(</span> <span class='nx'>e</span> <span class='p'>){</span>
+    <span class='kd'>var</span> <span class='nx'>target</span><span class='p'>;</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nx'>e</span><span class='p'>)</span> <span class='kd'>var</span> <span class='nx'>e</span> <span class='o'>=</span> <span class='nb'>window</span><span class='p'>.</span><span class='nx'>event</span><span class='p'>;</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>e</span><span class='p'>.</span><span class='nx'>target</span><span class='p'>)</span> <span class='nx'>target</span> <span class='o'>=</span> <span class='nx'>e</span><span class='p'>.</span><span class='nx'>target</span>
+    <span class='k'>else</span> <span class='k'>if</span> <span class='p'>(</span><span class='nx'>e</span><span class='p'>.</span><span class='nx'>srcElement</span><span class='p'>)</span> <span class='nx'>target</span> <span class='o'>=</span> <span class='nx'>e</span><span class='p'>.</span><span class='nx'>srcElement</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>target</span><span class='p'>.</span><span class='nx'>nodeType</span> <span class='o'>===</span> <span class='mi'>3</span><span class='p'>)</span> <span class='nx'>target</span> <span class='o'>=</span> <span class='nx'>target</span><span class='p'>.</span><span class='nx'>parentNode</span><span class='p'>;</span>
+    <span class='kd'>var</span> <span class='nx'>tmp</span> <span class='o'>=</span> <span class='nx'>target</span><span class='p'>.</span><span class='nx'>firstChild</span><span class='p'>.</span><span class='nx'>nodeValue</span><span class='p'>;</span>
+    <span class='nx'>target</span><span class='p'>.</span><span class='nx'>firstChild</span><span class='p'>.</span><span class='nx'>nodeValue</span> <span class='o'>=</span> <span class='nx'>target</span><span class='p'>.</span><span class='nx'>getAttribute</span><span class='p'>(</span><span class='s1'>&#39;hexdec&#39;</span><span class='p'>);</span>
+    <span class='nx'>target</span><span class='p'>.</span><span class='nx'>setAttribute</span><span class='p'>(</span><span class='s1'>&#39;hexdec&#39;</span><span class='p'>,</span> <span class='nx'>tmp</span><span class='p'>);</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='nx'>target</span><span class='p'>.</span><span class='nx'>className</span> <span class='o'>===</span> <span class='s1'>&#39;hexdec&#39;</span><span class='p'>)</span>
+      <span class='nx'>target</span><span class='p'>.</span><span class='nx'>className</span> <span class='o'>=</span> <span class='s1'>&#39;dechex&#39;</span><span class='p'>;</span>
+    <span class='k'>else</span>
+      <span class='nx'>target</span><span class='p'>.</span><span class='nx'>className</span> <span class='o'>=</span> <span class='s1'>&#39;hexdec&#39;</span><span class='p'>;</span>
+  <span class='p'>}</span>
+
+
+  <span class='c1'>// if no node is specified then start processing on the page body</span>
+  <span class='nx'>node</span> <span class='o'>=</span> <span class='nx'>node</span> <span class='o'>||</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>body</span><span class='p'>;</span>
+
+  <span class='kd'>var</span> <span class='nx'>skipRe</span> <span class='o'>=</span> <span class='sr'>/^(script|style|textarea)$/i</span><span class='o'>|&gt;</span><span class='p'>;</span>
+  <span class='kd'>var</span> <span class='nx'>re</span> <span class='o'>=</span> <span class='sr'>/((?:[0-9A-Ha-h]{2}\s*){6,})|((?:[0-9]{3}\s*){6,})/g</span><span class='o'>|&gt;</span><span class='p'>;</span>
+  <span class='c1'>// get all nodes from dom</span>
+  <span class='kd'>var</span> <span class='nx'>nodes</span> <span class='o'>=</span> <span class='nx'>node</span><span class='p'>.</span><span class='nx'>all</span> <span class='o'>||</span> <span class='nx'>node</span><span class='p'>.</span><span class='nx'>getElementsByTagName</span><span class='p'>(</span><span class='s1'>&#39;*&#39;</span><span class='p'>);</span>
+  <span class='kd'>var</span> <span class='nx'>i</span><span class='p'>,</span> <span class='nx'>cnode</span><span class='p'>,</span> <span class='nx'>span</span><span class='p'>;</span>
+
+  <span class='c1'>// loop thru all the nodes</span>
+  <span class='k'>for</span> <span class='p'>(</span><span class='nx'>i</span><span class='o'>=</span><span class='mi'>0</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>&lt;</span><span class='nx'>nodes</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='c1'>// skip if it has no child nodes, it&#39;s already processed or the tag is not valid</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nx'>nodes</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>childNodes</span><span class='p'>.</span><span class='nx'>length</span> <span class='o'>||</span>
+      <span class='nx'>nodes</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>hasAttribute</span><span class='p'>(</span><span class='s1'>&#39;hexdec&#39;</span><span class='p'>)</span> <span class='o'>||</span>
+      <span class='nx'>skipRe</span><span class='p'>.</span><span class='nx'>test</span><span class='p'>(</span><span class='nx'>nodes</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>tagName</span><span class='p'>)</span>
+    <span class='p'>)</span>
+      <span class='k'>continue</span><span class='p'>;</span>
+
+    <span class='c1'>// loop thru all children</span>
+    <span class='nx'>cnode</span> <span class='o'>=</span> <span class='nx'>nodes</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>].</span><span class='nx'>childNodes</span><span class='p'>[</span><span class='mi'>0</span><span class='p'>];</span>
+    <span class='k'>while</span> <span class='p'>(</span><span class='nx'>cnode</span><span class='p'>)</span> <span class='p'>{</span>
+      <span class='c1'>// we just care about text nodes</span>
+      <span class='k'>if</span> <span class='p'>(</span><span class='nx'>cnode</span><span class='p'>.</span><span class='nx'>nodeType</span> <span class='o'>===</span> <span class='mi'>3</span><span class='p'>)</span> <span class='p'>{</span>
+        <span class='c1'>// loop thru all regex matches</span>
+        <span class='k'>while</span> <span class='p'>(</span><span class='nx'>m</span><span class='o'>=</span><span class='nx'>re</span><span class='p'>.</span><span class='nx'>exec</span><span class='p'>(</span><span class='nx'>cnode</span><span class='p'>.</span><span class='nx'>nodeValue</span><span class='p'>))</span> <span class='p'>{</span>
+          <span class='c1'>// if there is text before the match add it on its own node</span>
+          <span class='k'>if</span> <span class='p'>(</span><span class='nx'>m</span><span class='p'>.</span><span class='nx'>index</span> <span class='o'>&gt;</span> <span class='mi'>0</span><span class='p'>)</span>
+            <span class='nx'>cnode</span><span class='p'>.</span><span class='nx'>parentNode</span><span class='p'>.</span><span class='nx'>insertBefore</span><span class='p'>(</span>
+              <span class='nb'>document</span><span class='p'>.</span><span class='nx'>createTextNode</span><span class='p'>(</span> <span class='nx'>cnode</span><span class='p'>.</span><span class='nx'>nodeValue</span><span class='p'>.</span><span class='nx'>substr</span><span class='p'>(</span><span class='mi'>0</span><span class='p'>,</span> <span class='nx'>m</span><span class='p'>.</span><span class='nx'>index</span><span class='p'>)</span> <span class='p'>),</span> <span class='nx'>cnode</span>
+            <span class='p'>);</span>
+          <span class='c1'>// create a new span node for the key string</span>
+          <span class='nx'>span</span> <span class='o'>=</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>createElement</span><span class='p'>(</span><span class='s1'>&#39;SPAN&#39;</span><span class='p'>);</span>
+          <span class='c1'>// if the first capture parenthesis is found then it&#39;s in hex format</span>
+          <span class='k'>if</span> <span class='p'>(</span><span class='nx'>m</span><span class='p'>[</span><span class='mi'>1</span><span class='p'>])</span> <span class='p'>{</span>
+            <span class='nx'>span</span><span class='p'>.</span><span class='nx'>className</span> <span class='o'>=</span> <span class='s1'>&#39;hexdec&#39;</span><span class='p'>;</span>
+            <span class='nx'>span</span><span class='p'>.</span><span class='nx'>setAttribute</span><span class='p'>(</span> <span class='s1'>&#39;hexdec&#39;</span><span class='p'>,</span> <span class='nx'>hex2dec</span><span class='p'>(</span><span class='nx'>m</span><span class='p'>[</span><span class='mi'>0</span><span class='p'>])</span> <span class='p'>);</span>
+          <span class='c1'>// otherwise it is in decimal format</span>
+          <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
+            <span class='nx'>span</span><span class='p'>.</span><span class='nx'>className</span> <span class='o'>=</span> <span class='s1'>&#39;dechex&#39;</span><span class='p'>;</span>
+            <span class='nx'>span</span><span class='p'>.</span><span class='nx'>setAttribute</span><span class='p'>(</span> <span class='s1'>&#39;hexdec&#39;</span><span class='p'>,</span> <span class='nx'>dec2hex</span><span class='p'>(</span><span class='nx'>m</span><span class='p'>[</span><span class='mi'>0</span><span class='p'>])</span> <span class='p'>);</span>
+          <span class='p'>}</span>
+          <span class='nx'>span</span><span class='p'>.</span><span class='nx'>setAttribute</span><span class='p'>(</span> <span class='s1'>&#39;title&#39;</span><span class='p'>,</span> <span class='s1'>&#39;Click to swap betwen hex and decimal notations&#39;</span> <span class='p'>);</span>
+          <span class='nx'>span</span><span class='p'>.</span><span class='nx'>appendChild</span><span class='p'>(</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>createTextNode</span><span class='p'>(</span> <span class='nx'>m</span><span class='p'>[</span><span class='mi'>0</span><span class='p'>]</span> <span class='p'>)</span> <span class='p'>);</span>
+          <span class='c1'>//span.onclick = swapHexDec;</span>
+          <span class='nx'>span</span><span class='p'>.</span><span class='nx'>addEventListener</span><span class='p'>(</span> <span class='s1'>&#39;click&#39;</span><span class='p'>,</span> <span class='nx'>swapHexDec</span><span class='p'>,</span> <span class='kc'>true</span> <span class='p'>);</span>
+          <span class='nx'>cnode</span><span class='p'>.</span><span class='nx'>parentNode</span><span class='p'>.</span><span class='nx'>insertBefore</span><span class='p'>(</span> <span class='nx'>span</span><span class='p'>,</span> <span class='nx'>cnode</span> <span class='p'>);</span>
+
+          <span class='c1'>// remove the already processed text from the node</span>
+          <span class='nx'>cnode</span><span class='p'>.</span><span class='nx'>nodeValue</span> <span class='o'>=</span> <span class='nx'>cnode</span><span class='p'>.</span><span class='nx'>nodeValue</span><span class='p'>.</span><span class='nx'>substring</span><span class='p'>(</span> <span class='nx'>m</span><span class='p'>.</span><span class='nx'>index</span> <span class='o'>+</span> <span class='nx'>m</span><span class='p'>[</span><span class='mi'>0</span><span class='p'>].</span><span class='nx'>length</span> <span class='p'>);</span>
+          <span class='c1'>// reset the regex text pointer</span>
+          <span class='nx'>re</span><span class='p'>.</span><span class='nx'>lastIndex</span> <span class='o'>=</span> <span class='mi'>0</span><span class='p'>;</span>
+        <span class='p'>}</span>
+      <span class='p'>}</span>
+      <span class='c1'>// point to next children or null</span>
+      <span class='nx'>cnode</span> <span class='o'>=</span> <span class='nx'>cnode</span><span class='p'>.</span><span class='nx'>nextSibling</span><span class='p'>;</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+
+<span class='nb'>window</span><span class='p'>.</span><span class='nx'>addEventListener</span><span class='p'>(</span> <span class='s1'>&#39;load&#39;</span><span class='p'>,</span> <span class='kd'>function</span> <span class='p'>()</span> <span class='p'>{</span> <span class='nx'>HEXDEC</span><span class='p'>()</span> <span class='p'>},</span> <span class='kc'>true</span> <span class='p'>);</span>
+
+<span class='kd'>function</span> <span class='nx'>addGlobalStyle</span><span class='p'>(</span><span class='nx'>css</span><span class='p'>)</span> <span class='p'>{</span>
+    <span class='kd'>var</span> <span class='nx'>head</span><span class='p'>,</span> <span class='nx'>style</span><span class='p'>;</span>
+    <span class='nx'>head</span> <span class='o'>=</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>getElementsByTagName</span><span class='p'>(</span><span class='s1'>&#39;head&#39;</span><span class='p'>)[</span><span class='mi'>0</span><span class='p'>];</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nx'>head</span><span class='p'>)</span> <span class='p'>{</span> <span class='k'>return</span><span class='p'>;</span> <span class='p'>}</span>
+    <span class='nx'>style</span> <span class='o'>=</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>createElement</span><span class='p'>(</span><span class='s1'>&#39;style&#39;</span><span class='p'>);</span>
+    <span class='nx'>style</span><span class='p'>.</span><span class='nx'>type</span> <span class='o'>=</span> <span class='s1'>&#39;text/css&#39;</span><span class='p'>;</span>
+    <span class='nx'>style</span><span class='p'>.</span><span class='nx'>innerHTML</span> <span class='o'>=</span> <span class='nx'>css</span><span class='p'>;</span>
+    <span class='nx'>head</span><span class='p'>.</span><span class='nx'>appendChild</span><span class='p'>(</span><span class='nx'>style</span><span class='p'>);</span>
+<span class='p'>}</span>
+<span class='nx'>addGlobalStyle</span><span class='p'>(</span> <span class='s1'>&#39;\</span>
+<span class='s1'>  .hexdec, .dechex { \</span>
+<span class='s1'>    cursor: hand;\</span>
+<span class='s1'>    cursor: pointer !important;\</span>
+<span class='s1'>    border-bottom: 1px dotted #888;\</span>
+<span class='s1'>    padding-left: 32px;\</span>
+<span class='s1'>    background: url(http://pollinimini.net/temp/hex.png) no-repeat left;\</span>
+<span class='s1'>  }\n\</span>
+<span class='s1'>  .dechex {\</span>
+<span class='s1'>    background: url(http://pollinimini.net/temp/dec.png) no-repeat left;\</span>
+<span class='s1'>  }&#39;</span><span class='p'>);</span>
+</code></pre></div>
+<p>By default the following sites are enabled (you can configure it for whatever sites you need):</p>
+
+<ul>
+<li>http://www.satscreen.ws/forum/</li>
+
+<li>http://floresd.blogspot.com/</li>
+
+<li>http://galeon.com/tusflores/</li>
+
+<li>https://www.blogger.com/</li>
+</ul>
+
+<p>It uses a neutral blue coloring for the styling which shouldn’t break most web designs. The images are served from my own server, so they aren’t very reliable, don’t be afraid if one day they stop showing :)</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+
+
+
+  <div id="pagination">
+    
+      <a class="prev" href="/page6/">&laquo; Newer</a>
+    
+  
+    
+      
+        <a class="num" href="/">1</a>
+      
+    
+      
+        <a class="num" href="/page2/">2</a>
+      
+    
+      
+        <a class="num" href="/page3/">3</a>
+      
+    
+      
+        <a class="num" href="/page4/">4</a>
+      
+    
+      
+        <a class="num" href="/page5/">5</a>
+      
+    
+      
+        <a class="num" href="/page6/">6</a>
+      
+    
+      
+        <span class="num">7</span>
+      
+    
+      
+        <a class="num" href="/page8/">8</a>
+      
+    
+      
+        <a class="num" href="/page9/">9</a>
+      
+    
+      
+        <a class="num" href="/page10/">10</a>
+      
+    
+      
+        <a class="num" href="/page11/">11</a>
+      
+    
+      
+        <a class="num" href="/page12/">12</a>
+      
+    
+  
+    
+      <a class="next" href="/page8/">Older &raquo;</a>
+    
+  </div>
+
+
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

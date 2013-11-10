@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>A solution to PHP's new namespace separator moaning | Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+
+ 
+<div class="entry">
+  <h2>
+    
+    <span>A solution to PHP's new namespace separator moaning</span>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Nov 09, 2008
+    — Filled in Code
+    
+      and tagged as
+      irony, namaspace, php, and webdev
+    
+
+    <a class="entry-comments" href="/blog/solution-php-namespace-separator-moaning/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>I&#8217;ve been quite busy lately but I&#8217;ve obviously been exposed to all the fud about the PHP internals decission of choosing the back-slash as the namespace separator.</p>
+
+<p>So to keep everyone happy I&#8217;ve spent a few minutes working on a solution to the problem and here it goes:</p>
+<div class='highlight'><pre><code class='php'><span class='cp'>&lt;?php</span>
+<span class='k'>class</span> <span class='nc'>NsFixerFileStream</span> <span class='p'>{</span>
+    <span class='k'>protected</span> <span class='nv'>$fp</span><span class='p'>;</span>
+    <span class='k'>protected</span> <span class='nv'>$separator</span> <span class='o'>=</span> <span class='s1'>&#39;:::&#39;</span><span class='p'>;</span>
+    <span class='k'>protected</span> <span class='nv'>$isPHP</span> <span class='o'>=</span> <span class='k'>false</span><span class='p'>;</span>
+    <span class='k'>public</span> <span class='nv'>$context</span><span class='p'>;</span>
+
+    <span class='k'>function</span> <span class='nf'>stream_open</span><span class='p'>(</span><span class='nv'>$path</span><span class='p'>,</span> <span class='nv'>$mode</span><span class='p'>,</span> <span class='nv'>$options</span><span class='p'>,</span> <span class='o'>&amp;</span><span class='nv'>$opened_path</span><span class='p'>)</span>
+    <span class='p'>{</span>
+        <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>context</span><span class='p'>)</span> <span class='p'>{</span>
+                <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>context</span> <span class='o'>=</span> <span class='nb'>stream_context_get_default</span><span class='p'>();</span>
+        <span class='p'>}</span>
+        <span class='nv'>$opts</span> <span class='o'>=</span> <span class='nb'>stream_context_get_options</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>context</span><span class='p'>);</span>
+        <span class='k'>if</span> <span class='p'>(</span><span class='o'>!</span><span class='k'>empty</span><span class='p'>(</span><span class='nv'>$opts</span><span class='p'>[</span><span class='s1'>&#39;file&#39;</span><span class='p'>])</span> <span class='o'>&amp;&amp;</span> <span class='o'>!</span><span class='k'>empty</span><span class='p'>(</span><span class='nv'>$opts</span><span class='p'>[</span><span class='s1'>&#39;file&#39;</span><span class='p'>][</span><span class='s1'>&#39;separator&#39;</span><span class='p'>]))</span> <span class='p'>{</span>
+                <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>separator</span> <span class='o'>=</span> <span class='nv'>$opts</span><span class='p'>[</span><span class='s1'>&#39;file&#39;</span><span class='p'>][</span><span class='s1'>&#39;separator&#39;</span><span class='p'>];</span>
+        <span class='p'>}</span>
+
+        <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>isPHP</span> <span class='o'>=</span> <span class='nb'>pathinfo</span><span class='p'>(</span><span class='nv'>$path</span><span class='p'>,</span> <span class='nx'>PATHINFO_EXTENSION</span><span class='p'>)</span> <span class='o'>===</span> <span class='s1'>&#39;php&#39;</span><span class='p'>;</span>
+
+        <span class='nx'>stream_wrapper_restore</span><span class='p'>(</span><span class='s1'>&#39;file&#39;</span><span class='p'>);</span>
+
+        <span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>fp</span> <span class='o'>=</span> <span class='nb'>fopen</span><span class='p'>(</span><span class='nv'>$path</span><span class='p'>,</span> <span class='nv'>$mode</span><span class='p'>);</span>
+
+        <span class='nx'>stream_wrapper_unregister</span><span class='p'>(</span><span class='s1'>&#39;file&#39;</span><span class='p'>);</span>
+        <span class='nx'>stream_wrapper_register</span><span class='p'>(</span><span class='s1'>&#39;file&#39;</span><span class='p'>,</span> <span class='nb'>get_class</span><span class='p'>(</span><span class='nv'>$this</span><span class='p'>));</span>
+
+        <span class='k'>return</span> <span class='o'>!</span><span class='k'>empty</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>fp</span><span class='p'>);</span>
+    <span class='p'>}</span>
+
+    <span class='k'>function</span> <span class='nf'>stream_read</span><span class='p'>(</span><span class='nv'>$count</span><span class='p'>)</span>
+    <span class='p'>{</span>
+        <span class='nv'>$data</span> <span class='o'>=</span> <span class='nb'>fread</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>fp</span><span class='p'>,</span> <span class='nv'>$count</span><span class='p'>);</span>
+        <span class='k'>if</span> <span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>isPHP</span> <span class='o'>&amp;&amp;</span> <span class='o'>!</span><span class='k'>empty</span><span class='p'>(</span><span class='nv'>$data</span><span class='p'>))</span> <span class='p'>{</span>
+                <span class='nv'>$data</span> <span class='o'>=</span> <span class='nb'>str_replace</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>separator</span><span class='p'>,</span> <span class='s1'>&#39;\\&#39;</span><span class='p'>,</span> <span class='nv'>$data</span><span class='p'>);</span>
+        <span class='p'>}</span>
+
+        <span class='k'>return</span> <span class='nv'>$data</span><span class='p'>;</span>
+    <span class='p'>}</span>
+
+    <span class='k'>function</span> <span class='nf'>stream_write</span><span class='p'>(</span><span class='nv'>$data</span><span class='p'>)</span>
+    <span class='p'>{</span>
+        <span class='k'>return</span> <span class='nb'>fwrite</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>fp</span><span class='p'>,</span> <span class='nv'>$data</span><span class='p'>);</span>
+    <span class='p'>}</span>
+
+    <span class='k'>function</span> <span class='nf'>stream_tell</span><span class='p'>()</span>
+    <span class='p'>{</span>
+        <span class='k'>return</span> <span class='nb'>ftell</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>fp</span><span class='p'>);</span>
+    <span class='p'>}</span>
+
+    <span class='k'>function</span> <span class='nf'>stream_eof</span><span class='p'>()</span>
+    <span class='p'>{</span>
+        <span class='k'>return</span> <span class='nb'>feof</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>fp</span><span class='p'>);</span>
+    <span class='p'>}</span>
+
+    <span class='k'>function</span> <span class='nf'>stream_seek</span><span class='p'>(</span><span class='nv'>$offset</span><span class='p'>,</span> <span class='nv'>$whence</span><span class='p'>)</span>
+    <span class='p'>{</span>
+        <span class='k'>return</span> <span class='nb'>fseek</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>fp</span><span class='p'>,</span> <span class='nv'>$offset</span><span class='p'>,</span> <span class='nv'>$whence</span><span class='p'>);</span>
+    <span class='p'>}</span>
+
+    <span class='k'>function</span> <span class='nf'>stream_stat</span><span class='p'>()</span>
+    <span class='p'>{</span>
+        <span class='k'>return</span> <span class='nb'>fstat</span><span class='p'>(</span><span class='nv'>$this</span><span class='o'>-&gt;</span><span class='na'>fp</span><span class='p'>);</span>
+    <span class='p'>}</span>
+<span class='p'>}</span>
+
+
+<span class='c1'>// Replace default stream wrapper with out custom one</span>
+<span class='nx'>stream_wrapper_unregister</span><span class='p'>(</span><span class='s1'>&#39;file&#39;</span><span class='p'>);</span>
+<span class='nx'>stream_wrapper_register</span><span class='p'>(</span><span class='s2'>&quot;file&quot;</span><span class='p'>,</span> <span class='s2'>&quot;NsFixerFileStream&quot;</span><span class='p'>)</span>
+    <span class='k'>or</span> <span class='k'>die</span><span class='p'>(</span><span class='s2'>&quot;Failed to register protocol&quot;</span><span class='p'>);</span>
+
+<span class='c1'>// Define the default namespace separator</span>
+<span class='nb'>stream_context_set_default</span><span class='p'>(</span><span class='k'>array</span><span class='p'>(</span>
+        <span class='s1'>&#39;file&#39;</span> <span class='o'>=&gt;</span> <span class='k'>array</span><span class='p'>(</span>
+                <span class='s1'>&#39;separator&#39;</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;:::&#39;</span>
+        <span class='p'>)</span>
+<span class='p'>));</span>
+</code></pre></div>
+<p>For the least versed on PHP&#8217;s stream wrappers, what it does is replace the standard file i/o stream with one that replaces on the fly everything you like to be a namespace separator with an ugly back-slash. Just place this on a file on your server and add its location to your <code>auto_prepend_file</code> ini directive.</p>
+
+<p>Now you can spend your time writing stuff like the following instead of blogging about how the ugly back-slash in your code can ruin your way of life :)</p>
+<div class='highlight'><pre><code class='php'><span class='cp'>&lt;?php</span>
+<span class='k'>namespace</span> <span class='nx'>DRSLUMP</span><span class='o'>:::</span><span class='nx'>test</span><span class='p'>;</span>
+
+<span class='k'>class</span> <span class='nc'>foo</span> <span class='p'>{</span>
+    <span class='k'>static</span> <span class='k'>public</span> <span class='k'>function</span> <span class='nf'>bar</span><span class='p'>(){</span>
+        <span class='o'>:::</span><span class='nb'>printf</span><span class='p'>(</span><span class='s1'>&#39;Hello %s!&#39;</span><span class='p'>,</span> <span class='s1'>&#39;world&#39;</span><span class='p'>);</span>
+    <span class='p'>}</span>
+<span class='p'>}</span>
+
+<span class='o'>:::</span><span class='nx'>DRSLUMP</span><span class='o'>:::</span><span class='nx'>test</span><span class='o'>:::</span><span class='nx'>foo</span><span class='o'>::</span><span class='na'>bar</span><span class='p'>();</span>
+</code></pre></div>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+<div id="comments">
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    var disqus_developer = (/localhost|github|dev/i).test(location.host);
+    
+    var disqus_url = 'http://pollinimini.net/blog/solution-phps-new-namespace-separator-moaning';
+    
+  </script>
+  <script type="text/javascript" src="http://disqus.com/forums/pollinimini/embed.js"></script>
+   
+  <noscript>
+    <a href="http://pollinimini.disqus.com/?url=ref">View the discussion thread.</a>
+  </noscript>
+</div>
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>

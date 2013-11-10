@@ -1,0 +1,27 @@
+; $Id: darkelegance.info,v 1.2 2009/03/20 09:39:10 navdeepraj Exp $
+name = Dark Elegance
+description = Simple & Elegant Dark 2 Column Theme.
+version = VERSION
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = style.css
+stylesheets[print][] = print.css
+
+; Information added by drupal.org packaging script on 2008-08-14
+project = "drupal"
+datestamp = "1218672610"
+
+
+; Information added by drupal.org packaging script on 2008-12-12
+version = "6.x-1.0"
+core = "6.x"
+project = "darkelegance"
+datestamp = "1229066408"
+
+
+; Information added by drupal.org packaging script on 2009-03-20
+version = "6.x-1.1"
+core = "6.x"
+project = "darkelegance"
+datestamp = "1237542620"
+

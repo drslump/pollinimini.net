@@ -1,0 +1,42 @@
+---
+layout: post
+title: Nokia's N810 on the mail
+category: Technology
+tags: [nokia, n810, maemo, gadgets]
+---
+
+After being trying to get an [iphone][1] for a couple of months and haven't succeed
+at it, I sat down and did an extensive research on the market offerings for my
+needs. Finally I found what I needed and to my surprise it wasn't the phone with
+the Apple logo.
+
+I spend more than two hours each day on the train which gets absolutely packed
+at rush hours, so my plan to work on the laptop while traveling is not a feasible
+option (Even with my smallish [Dell XPS M1330][2]). Checking email and rss feeds on
+my [Sony Ericsson K800i][3] cellphone works but with the huge amount of tunnels
+in the trip the data connection keeps falling and the screen is not that big as
+to make it a nice experience. So I decided to try with the Apple's phone which
+should offer a great experience while on the move with its large touch screen
+and the ability to sync imap accounts for offline reading of the inbox and nice
+rss reading. Since I couldn't obtain one I searched on the net for alternatives
+and I felt in love with Nokia's N810 internet tablet device.
+
+The [N810][4] is not a smart phone, it just offers Wifi and Bluetooth radios so
+it needs to tether with a phone to access mobile data networks. It does offer
+however a wonderful touch screen sporting a 800×480 resolution with an amazing
+225dpi (quite good for [ebook reading][5]), a full qwerty keyboard and a Linux based
+([Maemo][6]) operating system with a ton of available [third party application
+and games][7]. What I like the most about the device is that its environment is
+really open, which will allow me to tinker with it and suit it best to my needs.
+
+So yesterday I placed the order on Nokia's online shop for it and I should be
+enjoying this wonderful device next week. A big big big thanks to Cristina for
+giving me this great present!
+
+[1]: http://www.apple.com/iphone
+[2]: http://www.dell.com/content/products/productdetails.aspx/xpsnb_m1330
+[3]: http://www.sonyericsson.com/cws/products/mobilephones/overview/k800i
+[4]: http://europe.nokia.com/A4568578
+[5]: http://www.fbreader.org/
+[6]: http://maemo.org/
+[7]: http://maemo.org/downloads/OS2008

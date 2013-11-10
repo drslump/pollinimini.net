@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Pollinimini.net</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="Iván -DrSlump- Montes" />
+    <meta name="description" content="DrSlump @ Pollinimini.net" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+     
+    
+    <link rel="stylesheet" href="/resources/global.css" type="text/css" />
+    
+     
+    
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+    <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>
+    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>
+    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>
+      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>
+      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>
+        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>
+        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>
+      </div>
+      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>
+      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>
+      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>
+      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>
+    </div>
+    </div>
+    <![endif]-->
+
+    <div id="header">
+
+      <h1>
+        <a href="/">Pollinimini.net</a>        
+      </h1>
+
+      <div>
+          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
+          <p>Upload an image sized 950x100 pixels.</p>
+          <a id="upload">Upload</a>
+      </div>
+    </div>
+
+    <ul id="navigation">
+    
+      <li>
+        <a  href="/" >Blog</a>
+        
+      </li>
+    
+      <li>
+        <a  href="/about/" >About</a>
+        
+          <ul>
+          
+            <li>
+              <a  href="/portfolio/" >Portfolio</a>
+            </li>
+          
+            <li>
+              <a  href="mailto:drslump-at-pollinimini-dot-net" >Contact</a>
+            </li>
+          
+          </ul>
+        
+      </li>
+    
+    </ul>
+      
+    <div id="body">
+      <a name="content" class="hidden">Skip to content</a>
+      <div id="sidebar">
+        
+            <p class="about">
+    <a href="/about">
+        <img src="/resources/meatduck.png" width="80" height="80" alt="Avatar" />
+    </a>
+    Hi, I'm Iván Montes, also known as DrSlump, a passionate web developer.
+    You can follow me on <a href="/atom.xml">this blog</a>, fork me on 
+    <a href="http://github.com/drslump">GitHub</a> and check out some of my
+    work on my <a href="/portfolio">portfolio</a>.
+</p>
+
+
+        
+      </div>
+
+      <div id="content">
+        
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/detecting-ie-conditional-comments">Detecting IE with JS conditional comments</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Apr 06, 2007
+    — Filled in Code
+    
+      and tagged as
+      webdev and javascript
+    
+
+    <a class="entry-comments" href="/blog/detecting-ie-conditional-comments/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>I just stumbled upon a short yet excellent post on Dean Edwards blog. It shows how to use IE proprietary javascript conditional comments to detect if we’re running on IE in a secure and very short way.</p>
+
+<p><div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>isMSIE</span> <span class='o'>=</span> <span class='cm'>/*@cc_on!@*/</span><span class='kc'>false</span><span class='p'>;</span>
+</code></pre></div></p>
+
+<p>Further down in the post’s comments someone named Lucky propose the use of a variant to check against IE 5.5+ and IE7. javascript:</p>
+
+<p><div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>ieScript</span><span class='cm'>/*@cc_on=@_jscript_version@*/</span><span class='p'>;</span>
+<span class='k'>if</span> <span class='p'>(</span><span class='nx'>ieScript</span><span class='p'>)</span> <span class='c1'>// IE</span>
+<span class='k'>if</span> <span class='p'>(</span><span class='nx'>ieScript</span><span class='o'>&gt;=</span><span class='mf'>5.5</span><span class='p'>)</span> <span class='c1'>// IE 5.5 +</span>
+<span class='k'>if</span> <span class='p'>(</span><span class='nx'>ieScript</span><span class='o'>==</span><span class='mf'>5.7</span><span class='p'>)</span> <span class='c1'>// IE 7.0 VistaCopy to clipboard</span>
+</code></pre></div></p>
+
+<p>Moreover Dean also shows in one of the comments how to check for the rendering path used by IE (quirks VS strict modes)</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>ieStrict</span> <span class='o'>=</span> <span class='nb'>document</span><span class='p'>.</span><span class='nx'>compatMode</span> <span class='o'>==</span> <span class='s1'>&#39;CSS1Compat&#39;</span><span class='p'>;</span><span class='nx'>Copy</span> <span class='nx'>to</span> <span class='nx'>clipboard</span>
+</code></pre></div>
+<p>While is not very wise to abuse the sniffing of browsers vendors it’s also true that sometimes it’s required to split the code path in order to support the incompatibilities among browser vendors and versions.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/commenting-regular-expressions-javascript">Commenting regular expressions in Javascript</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Mar 20, 2007
+    — Filled in Code
+    
+      and tagged as
+      webdev, javascript, and regexp
+    
+
+    <a class="entry-comments" href="/blog/commenting-regular-expressions-javascript/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>I’ve been working a lot lately with regular expressions in Javascript. Being a really powerful tool it’s quite easy to get shoot on your own feet if you are not careful.</p>
+
+<p>After pushing the Javascript built in regular expression engine to its limits I found it lacking some modern features available in most recent versions of regex engines used in many languages like .Net, C++ Boost, Perl, Ruby or PHP. The feature I miss the most is the ability to use <a href='http://www.regular-expressions.info/lookaround.html'>look behind assertions</a>, with JS just supporting look ahead ones. Another feature I miss are <a href='http://www.regular-expressions.info/named.html'>named groups</a> and then one very useful new feature is the /x modifier (also known as ignore whitespace) which allows regular expression literals to span over multiple lines, ignoring white space, new lines and embedded comments!</p>
+
+<p>See the following example regex to match an url:</p>
+
+<pre><code>/\b(https?|ftp):\/\/([-A-Z0-9.]+)(\/[-A-Z0-9+&amp;@#/%=~_|!:,.;]*)?(\?[-A-Z0-9+&amp;@#/%=~_|!:,.;]*)?/i</code></pre>
+
+<p>Writting it is not difficult but modifiing it or even understanding it becomes an issue. Using the Perl /x modifier it would look like this:</p>
+<div class='highlight'><pre><code class='perl'><span class='sr'>m/\b                              # match at word break</span>
+<span class='sr'>  (https?|ftp):/</span><span class='o'>/</span>                 <span class='c1'># protocol: http, https or ftp</span>
+  <span class='p'>([</span><span class='o'>-</span><span class='n'>A</span><span class='o'>-</span><span class='n'>Z0</span><span class='o'>-</span><span class='mi'>9</span><span class='o'>.</span><span class='p'>]</span><span class='o'>+</span><span class='p'>)</span>                   <span class='c1'># domain</span>
+  <span class='p'>(</span><span class='sr'>/[-A-Z0-9+&amp;@#/</span><span class='nv'>%</span><span class='err'>=~</span><span class='nv'>_</span><span class='o'>|!</span><span class='p'>:,</span><span class='o'>.</span><span class='p'>;]</span><span class='o'>*</span><span class='p'>)?</span>   <span class='c1'># file path - optional</span>
+  <span class='p'>(</span><span class='o'>\</span><span class='p'>?[</span><span class='o'>-</span><span class='n'>A</span><span class='o'>-</span><span class='n'>Z0</span><span class='o'>-</span><span class='mi'>9</span><span class='o'>+&amp;</span><span class='nv'>@#</span><span class='err'>/%=~</span><span class='nv'>_</span><span class='o'>|!</span><span class='p'>:,</span><span class='o'>.</span><span class='p'>;]</span><span class='o'>*</span><span class='p'>)?</span>  <span class='c1'># query string - optional</span>
+<span class='o'>/</span><span class='n'>ix</span><span class='p'>;</span>
+</code></pre></div>
+<p>Much easier to understand, isn’t it? At least I really think so. To imitate this behaviour in Javascript I’ve written this simple function which just concatenates the regular expressions passed as arguments and returns a new one. This allows to break a complex regex into smaller pieces and comment them.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>function</span> <span class='nx'>xRegExp</span><span class='p'>()</span> <span class='p'>{</span>
+    <span class='kd'>var</span> <span class='nx'>cur</span><span class='p'>,</span> <span class='nx'>re</span><span class='p'>;</span>
+    <span class='kd'>var</span> <span class='nx'>arr</span> <span class='o'>=</span> <span class='p'>[];</span>
+    <span class='kd'>var</span> <span class='nx'>n</span> <span class='o'>=</span> <span class='nx'>arguments</span><span class='p'>.</span><span class='nx'>length</span><span class='p'>;</span>
+
+    <span class='c1'>// check if the last argument contains the regexp modifiers</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='sr'>/^[gmi]+$/</span><span class='o'>|&gt;</span><span class='p'>.</span><span class='nx'>test</span><span class='p'>(</span><span class='nx'>arguments</span><span class='p'>[</span><span class='nx'>n</span><span class='o'>-</span><span class='mi'>1</span><span class='p'>]))</span>
+        <span class='nx'>n</span><span class='o'>--</span><span class='p'>;</span>
+
+    <span class='c1'>// go thru all the passed regexes and concatenate them</span>
+    <span class='k'>for</span> <span class='p'>(</span><span class='kd'>var</span> <span class='nx'>i</span><span class='o'>=</span><span class='mi'>0</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>&lt;</span><span class='nx'>n</span><span class='p'>;</span> <span class='nx'>i</span><span class='o'>++</span><span class='p'>)</span> <span class='p'>{</span>
+        <span class='k'>if</span> <span class='p'>(</span><span class='k'>typeof</span> <span class='nx'>arguments</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>]</span> <span class='o'>===</span> <span class='s1'>&#39;string&#39;</span><span class='p'>)</span> <span class='p'>{</span>
+            <span class='nx'>arr</span><span class='p'>.</span><span class='nx'>push</span><span class='p'>(</span> <span class='nx'>arguments</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>]</span> <span class='p'>);</span>
+        <span class='p'>}</span> <span class='k'>else</span> <span class='p'>{</span>
+            <span class='c1'>// when we cast a regexp object to a string</span>
+            <span class='c1'>// the / delims and modifiers are included</span>
+            <span class='nx'>cur</span> <span class='o'>=</span> <span class='nb'>String</span><span class='p'>(</span><span class='nx'>arguments</span><span class='p'>[</span><span class='nx'>i</span><span class='p'>]);</span>
+            <span class='nx'>arr</span><span class='p'>.</span><span class='nx'>push</span><span class='p'>(</span> <span class='nx'>cur</span><span class='p'>.</span><span class='nx'>substring</span><span class='p'>(</span><span class='nx'>cur</span><span class='p'>.</span><span class='nx'>indexOf</span><span class='p'>(</span><span class='s1'>&#39;/&#39;</span><span class='p'>)</span><span class='o'>+</span><span class='mi'>1</span><span class='p'>,</span> <span class='nx'>cur</span><span class='p'>.</span><span class='nx'>lastIndexOf</span><span class='p'>(</span><span class='s1'>&#39;/&#39;</span><span class='p'>))</span> <span class='p'>);</span>
+        <span class='p'>}</span>
+    <span class='p'>}</span>
+
+    <span class='c1'>// create a new empty regexp</span>
+    <span class='nx'>re</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nb'>RegExp</span><span class='p'>();</span>
+    <span class='c1'>// compile the concatenated regex to speed it up</span>
+    <span class='nx'>re</span><span class='p'>.</span><span class='nx'>compile</span><span class='p'>(</span> <span class='nx'>arr</span><span class='p'>.</span><span class='nx'>join</span><span class='p'>(</span><span class='s1'>&#39;&#39;</span><span class='p'>),</span> <span class='nx'>arguments</span><span class='p'>[</span><span class='nx'>n</span><span class='p'>]</span> <span class='p'>);</span>
+    <span class='k'>return</span> <span class='nx'>re</span><span class='p'>;</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>Please note that the same thing can be done by concatenating strings manually, however regexes syntax is terse enough without having to double escape all the tokens. That’s why I preffer to write them out in their literal form (between slashes) instead of using quotes.</p>
+
+<p>Using the given function the above example would look like this. Note that you can use the regexp literal notation or just pass a simple string. The last argument can optionally pass the modifiers for the regular expression.</p>
+<div class='highlight'><pre><code class='javascript'><span class='kd'>var</span> <span class='nx'>re</span> <span class='o'>=</span> <span class='k'>new</span> <span class='nx'>xRegExp</span><span class='p'>(</span>
+    <span class='sr'>/\b/</span><span class='p'>,</span>                                 <span class='c1'>//match at word break</span>
+    <span class='s1'>&#39;(https?|ftp)://&#39;</span><span class='p'>,</span>                    <span class='c1'>//protocol: http, https and ftp</span>
+    <span class='s1'>&#39;([-A-Z0-9.]+)&#39;</span><span class='p'>,</span>                      <span class='c1'>//domain</span>
+    <span class='s1'>&#39;(/[-A-Z0-9+&amp;@#/%=~_|!:,.;]*)?&#39;</span><span class='p'>,</span>      <span class='c1'>//file path (optional)</span>
+    <span class='sr'>/(\?[-A-Z0-9+&amp;@#/%=~_|!:,.;]*)?/</span><span class='p'>,</span>     <span class='c1'>//query string (optional)</span>
+    <span class='s1'>&#39;i&#39;</span>                                   <span class='c1'>//Modifiers: case-insensitive</span>
+<span class='p'>);</span>
+</code></pre></div>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/some-brief-notes-textareaplus">Some brief notes on TextAreaPlus</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Mar 08, 2007
+    — Filled in Personal
+    
+
+    <a class="entry-comments" href="/blog/some-brief-notes-textareaplus/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Been a quite long time since the last update. I’m a bit ashamed for not keeping the blog updated regularly but I must confess that I’ve been expending my time on other affairs more important to me.</p>
+
+<p>Anyways, in this weeks I’ve been working again on TextAreaPlus, actually I’ve been busy making a full rewrite of the lexing scanner and optimizing the implementation to the limits of my knowledge. The algorithm used is described in the <a href='http://code.google.com/p/textareaplus/wiki/Lexer'>project wiki</a>.</p>
+
+<p>Today I was re-installing the PC at work since it broke havoc yesterday. After finishing the installation of almost all softwares I decided to have a look for a notepad replacement which was more feature packed than <a href='http://www.scintilla.org/SciTE.html'>Scite</a> and a bit faster than <a href='http://notepad-plus.sourceforge.net/'>Notepad++</a> to perform some minor editing of config files mainly. In the search I found a couple of new editors which I didn’t knew about but which seem to be gaining momentum. Both seem to be based on a successful Mac text editor called <a href='http://macromates.com/'>TextMate</a>, which I have heard about from Ruby-on-Rails evangelists but given my allergic reactions to anything mac related lately I didn’t check before. Today, trying those two new editors I got interested in TextMate and I’ve been learning about it in the last hour.</p>
+
+<p>So long history short, I thought I had invented the sliced bread with my implementation and design ideas for TextAreaPlus but it turns out that Allan Oddgaard, the TextMate developer, already implemented it in a very similar way a couple of years ago. My feelings are a bit conflictive right now, in one way I feel sad because I just reinvented the wheel but in the other I feel reassured to have come up with a solution which turns out to be proved and successful.</p>
+
+<p>I’ve written a couple hundred words with a couple of links in this post using a lame browser textarea, in moments like this I wish I had already a production ready version of TextAreaPlus. Lets hope I don’t keep wishing for it too long.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+  <div class="entry">
+  <h2>
+    
+    <a href="/blog/comprobar-nif-nie-cif">Comprobar un NIF, NIE o CIF</a>
+    
+  </h2>
+   
+  <div class="entry-meta">
+    Feb 01, 2007
+    — Filled in Code
+    
+      and tagged as
+      webdev and php
+    
+
+    <a class="entry-comments" href="/blog/comprobar-nif-nie-cif/#disqus_thread"></a>
+  </div>
+   
+  <div class="entry-content">
+    
+        <p>Después de postear un simple código para comprobar un NIF, me he mirado un poco más el tema y para mi sorpresa no hay mucha información sobre esto.</p>
+
+<p>Así que aquí presento una pequeña función para comprobar si el formato de un NIF, NIE o CIF es válido.</p>
+<div class='highlight'><pre><code class='php'><span class='cp'>&lt;?php</span>
+<span class='k'>function</span> <span class='nf'>checkIdentidadFiscal</span><span class='p'>(</span> <span class='nv'>$str</span> <span class='p'>)</span>
+<span class='p'>{</span>
+    <span class='c1'>//normalizamos el formato</span>
+    <span class='nv'>$str</span> <span class='o'>=</span> <span class='nb'>preg_replace</span><span class='p'>(</span> <span class='s1'>&#39;/[^0-9A-Z]/i&#39;</span><span class='p'>,</span> <span class='s1'>&#39;&#39;</span><span class='p'>,</span> <span class='nv'>$str</span> <span class='p'>);</span>
+
+    <span class='c1'>// El formato es de un NIF o un NIE</span>
+    <span class='k'>if</span> <span class='p'>(</span><span class='nb'>preg_match</span><span class='p'>(</span><span class='s1'>&#39;/X?[0-9]{8}[A-Z]/i&#39;</span><span class='p'>,</span> <span class='nv'>$str</span><span class='p'>))</span>
+    <span class='p'>{</span>
+          <span class='c1'>//para no duplicar código, eliminamos la X en el caso de que sea un NIE</span>
+          <span class='nv'>$str</span> <span class='o'>=</span> <span class='nb'>preg_replace</span><span class='p'>(</span><span class='s1'>&#39;/^X/i&#39;</span><span class='p'>,</span> <span class='s1'>&#39;&#39;</span><span class='p'>,</span> <span class='nv'>$str</span><span class='p'>);</span>
+
+          <span class='c1'>//calculamos que letra corresponde al número del DNI o NIE</span>
+          <span class='nv'>$stack</span> <span class='o'>=</span> <span class='s1'>&#39;TRWAGMYFPDXBNJZSQVHLCKE&#39;</span><span class='p'>;</span>
+          <span class='nv'>$pos</span> <span class='o'>=</span> <span class='nx'>substr</span><span class='p'>(</span><span class='nv'>$str</span><span class='p'>,</span> <span class='mi'>0</span><span class='p'>,</span> <span class='mi'>8</span><span class='p'>)</span> <span class='o'>%</span> <span class='mi'>23</span><span class='p'>;</span>
+          <span class='k'>if</span> <span class='p'>(</span><span class='nx'>strtoupper</span><span class='p'>(</span> <span class='nx'>substr</span><span class='p'>(</span><span class='nv'>$str</span><span class='p'>,</span> <span class='mi'>8</span><span class='p'>,</span> <span class='mi'>1</span><span class='p'>)</span> <span class='p'>)</span> <span class='o'>==</span> <span class='nx'>substr</span><span class='p'>(</span><span class='nv'>$stack</span><span class='p'>,</span> <span class='nv'>$pos</span><span class='p'>,</span> <span class='mi'>1</span><span class='p'>)</span> <span class='p'>)</span>
+              <span class='k'>return</span> <span class='k'>true</span><span class='p'>;</span>
+    <span class='p'>}</span>
+    <span class='c1'>// El formato es el de un CIF</span>
+    <span class='k'>else</span> <span class='k'>if</span> <span class='p'>(</span><span class='nb'>preg_match</span><span class='p'>(</span><span class='s1'>&#39;/[A-HK-NPQS][0-9]{7}[A-J0-9]/i&#39;</span><span class='p'>,</span> <span class='nv'>$str</span><span class='p'>))</span> <span class='c1'>//CIF</span>
+    <span class='p'>{</span>
+          <span class='c1'>//sumar los digitos en posiciones pares</span>
+          <span class='nv'>$sum</span> <span class='o'>=</span> <span class='mi'>0</span><span class='p'>;</span>
+          <span class='k'>for</span> <span class='p'>(</span><span class='nv'>$i</span><span class='o'>=</span><span class='mi'>2</span><span class='p'>;</span> <span class='nv'>$i</span><span class='o'>&lt;</span><span class='nb'>strlen</span><span class='p'>(</span><span class='nv'>$str</span><span class='p'>)</span><span class='o'>-</span><span class='mi'>1</span><span class='p'>;</span> <span class='nv'>$i</span><span class='o'>+=</span><span class='mi'>2</span><span class='p'>)</span> <span class='p'>{</span>
+              <span class='nv'>$sum</span> <span class='o'>+=</span> <span class='nx'>substr</span><span class='p'>(</span><span class='nv'>$str</span><span class='p'>,</span> <span class='nv'>$i</span><span class='p'>,</span> <span class='mi'>1</span><span class='p'>);</span>
+          <span class='p'>}</span>
+
+          <span class='c1'>//Multiplicar los digitos en posiciones impares por 2 y sumar los digitos del resultado</span>
+          <span class='k'>for</span> <span class='p'>(</span><span class='nv'>$i</span><span class='o'>=</span><span class='mi'>1</span><span class='p'>;</span> <span class='nv'>$i</span><span class='o'>&lt;</span><span class='nb'>strlen</span><span class='p'>(</span><span class='nv'>$str</span><span class='p'>)</span><span class='o'>-</span><span class='mi'>1</span><span class='p'>;</span> <span class='nv'>$i</span><span class='o'>+=</span><span class='mi'>2</span><span class='p'>)</span> <span class='p'>{</span>
+              <span class='nv'>$t</span> <span class='o'>=</span> <span class='nx'>substr</span><span class='p'>(</span><span class='nv'>$str</span><span class='p'>,</span> <span class='nv'>$i</span><span class='p'>,</span> <span class='mi'>1</span><span class='p'>)</span> <span class='o'>*</span> <span class='mi'>2</span><span class='p'>;</span>
+              <span class='c1'>//agrega la suma de los digitos del resultado de la multiplicación</span>
+              <span class='nv'>$sum</span> <span class='o'>+=</span> <span class='p'>(</span><span class='nv'>$t</span><span class='o'>&gt;</span><span class='mi'>9</span><span class='p'>)</span><span class='o'>?</span><span class='p'>(</span><span class='nv'>$t</span><span class='o'>-</span><span class='mi'>9</span><span class='p'>)</span><span class='o'>:</span><span class='nv'>$t</span><span class='p'>;</span>
+          <span class='p'>}</span>
+
+          <span class='c1'>//Restamos el último digito de la suma actual a 10 para obtener el control</span>
+          <span class='nv'>$control</span> <span class='o'>=</span> <span class='mi'>10</span> <span class='o'>-</span> <span class='p'>(</span><span class='nv'>$sum</span> <span class='o'>%</span> <span class='mi'>10</span><span class='p'>);</span>
+
+          <span class='c1'>//El control puede ser un número o una letra</span>
+          <span class='k'>if</span> <span class='p'>(</span> <span class='nx'>substr</span><span class='p'>(</span><span class='nv'>$str</span><span class='p'>,</span> <span class='mi'>8</span><span class='p'>,</span> <span class='mi'>1</span><span class='p'>)</span> <span class='o'>==</span> <span class='nv'>$control</span> <span class='o'>||</span>
+               <span class='nx'>strtoupper</span><span class='p'>(</span><span class='nx'>substr</span><span class='p'>(</span><span class='nv'>$str</span><span class='p'>,</span> <span class='mi'>8</span><span class='p'>,</span> <span class='mi'>1</span><span class='p'>))</span> <span class='o'>==</span> <span class='nx'>substr</span><span class='p'>(</span><span class='s1'>&#39;JABCDEFGHI&#39;</span><span class='p'>,</span> <span class='nv'>$control</span><span class='p'>,</span> <span class='mi'>1</span> <span class='p'>))</span>
+              <span class='k'>return</span> <span class='k'>true</span><span class='p'>;</span>
+          <span class='p'>}</span>
+
+          <span class='k'>return</span> <span class='k'>false</span><span class='p'>;</span>
+    <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre></div>
+<p>El algoritmo para comprobar el CIF lo he sacado de <a href='http://es.geocities.com/softcv/codigo/cif.html'>aquí</a>.</p>
+    
+  </div>
+   
+  <div class="entry-footer">
+  </div>
+</div>
+ 
+
+
+
+
+  <div id="pagination">
+    
+      <a class="prev" href="/page7/">&laquo; Newer</a>
+    
+  
+    
+      
+        <a class="num" href="/">1</a>
+      
+    
+      
+        <a class="num" href="/page2/">2</a>
+      
+    
+      
+        <a class="num" href="/page3/">3</a>
+      
+    
+      
+        <a class="num" href="/page4/">4</a>
+      
+    
+      
+        <a class="num" href="/page5/">5</a>
+      
+    
+      
+        <a class="num" href="/page6/">6</a>
+      
+    
+      
+        <a class="num" href="/page7/">7</a>
+      
+    
+      
+        <span class="num">8</span>
+      
+    
+      
+        <a class="num" href="/page9/">9</a>
+      
+    
+      
+        <a class="num" href="/page10/">10</a>
+      
+    
+      
+        <a class="num" href="/page11/">11</a>
+      
+    
+      
+        <a class="num" href="/page12/">12</a>
+      
+    
+  
+    
+      <a class="next" href="/page9/">Older &raquo;</a>
+    
+  </div>
+
+
+
+      </div>       
+    </div>
+     
+    <div id="footer">
+      <div id="about">
+        
+        <p>Content is licensed under <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5</a> unless stated otherwise.
+</p>
+        
+        <p>The opinions of authors expressed herein are those of the author and do not necessarily state or reflect those of the site owner.
+</p>
+        
+      </div>
+      <div id="copyright">
+        
+        <p>&copy; Copyright 2004-2010 Iván -DrSlump- Montes</p>
+        
+        <p>Design based on <a href="http://dezinerfolio.com/demo/darkelegance">Dark Elegance</a> by <a href="http://dezinerfolio.com">Dezinerfolio</a>
+</p>
+        
+        <p>Published with <a href="http://jekyllrb.com">Jekyll</a></p>
+        
+      </div>
+    </div>
+     
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    
+     
+    
+
+    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
+    <script type="text/javascript">
+        new AjaxUpload('upload', {
+          // Location of the server-side upload script
+          action: 'upload.php',
+          // File upload name
+          name: 'logofile',
+          // Submit file after selection
+          autoSubmit: true,
+          // Fired before the file is uploaded
+          onSubmit: function(file, extension) {
+            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
+              alert('Error: invalid file extension');
+              return false;
+            }
+          },
+          // Fired when file upload is completed
+          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
+          // @param file basename of uploaded file
+          // @param response server response
+          onComplete: function(file, response) {
+            if (response) {
+              alert('Error uploading image. Please try again.');
+            } else {
+              $('#header').empty().each(function(){
+                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
+              });
+            }
+          }
+        });
+    </script>
+
+
+    <!-- Disqus number of comments -->
+    <script type="text/javascript" defer="defer">
+      (function(){
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for (var i=0; i<links.length; i++){
+          if (links[i].href.indexOf('#disqus_thread') >= 0){
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+        }
+        document.write('<script defer="defer" charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollinimini/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-580032-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+    
+  </body>
+</html>
