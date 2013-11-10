@@ -36,16 +36,9 @@
     <![endif]-->
 
     <div id="header">
-
       <h1>
         <a href="/">Pollinimini.net</a>        
       </h1>
-
-      <div>
-          <h3>Are you any good with graphics? then please donate a banner for this site!</h3>
-          <p>Upload an image sized 950x100 pixels.</p>
-          <a id="upload">Upload</a>
-      </div>
     </div>
 
     <ul id="navigation">
@@ -88,6 +81,8 @@
     work on my <a href="/portfolio">portfolio</a>.
 </p>
 
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/DrSlump" data-widget-id="399685000380952576">Tweets by @DrSlump</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
         
       </div>
@@ -512,39 +507,6 @@
     
      
     
-
-    <script type="text/javascript" src="/resources/AjaxUpload.js"></script>
-    <script type="text/javascript">
-        new AjaxUpload('upload', {
-          // Location of the server-side upload script
-          action: 'upload.php',
-          // File upload name
-          name: 'logofile',
-          // Submit file after selection
-          autoSubmit: true,
-          // Fired before the file is uploaded
-          onSubmit: function(file, extension) {
-            if (!extension || !/^(gif|png|jpe?g)$/i.test(extension)) {
-              alert('Error: invalid file extension');
-              return false;
-            }
-          },
-          // Fired when file upload is completed
-          // WARNING! DO NOT USE "FALSE" STRING AS A RESPONSE!
-          // @param file basename of uploaded file
-          // @param response server response
-          onComplete: function(file, response) {
-            if (response) {
-              alert('Error uploading image. Please try again.');
-            } else {
-              $('#header').empty().each(function(){
-                this.style.background = 'url("/uploads/' + file + '") no-repeat center top';
-              });
-            }
-          }
-        });
-    </script>
-
 
     <!-- Disqus number of comments -->
     <script type="text/javascript" defer="defer">
