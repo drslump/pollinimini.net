@@ -17,7 +17,7 @@ Where
 : [Barcelona, Spain](http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=les+roquetes,+08812,+barcelona&sll=41.448644,2.172031&sspn=0.059316,0.062656&g=les+roquetes,+barcelona&ie=UTF8&hq=&hnear=Les+Roquetes,+Sant+Pere+de+Ribes,+Barcelona,+Catalonia,+Spain&ll=41.228659,1.746034&spn=59.983298,64.160156&z=4)
 
 What
-: Web developer @ [Telefónica R&D](http://www.tid.es) — Check the [portfolio](/portfolio)
+: Developer @ [Telefónica R&D](http://www.tid.es) — Check the [portfolio](/portfolio)
 
 How
 : drslump AT pollinimini DOT net
