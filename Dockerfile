@@ -1,2 +1,3 @@
-FROM nginx:alpine
-COPY _site /usr/share/nginx/html
+FROM fnichol/uhttpd
+COPY _site /www
+
