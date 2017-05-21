@@ -1,9 +1,10 @@
-auto:         false
 permalink:    /blog/:title
-pygments:     true
+highlighter:     true
 paginate:     4
+gems: [jekyll-paginate]
 exclude:
-  - Rakefile
+  - Makefile
+  - Dockerfile
 
 title:        Pollinimini.net
 utl:          http://pollinimini.net

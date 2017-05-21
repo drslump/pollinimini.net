@@ -1,0 +1,65 @@
+# Deployment
+#######################################
+
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: pollinimini-net
+  namespace: pollinimini
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pollinimini-net
+    spec:
+      containers:
+      - name: pollinimini-net
+        image: pollinimini-net:local
+        ports:
+        - containerPort: 80
+
+---
+# Service
+#########################################
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: pollinimini-net
+  namespace: pollinimini
+spec:
+  selector:
+    app: pollinimini-net
+  ports:
+    - protocol: TCP
+      port: 80
+  type: NodePort
+
+---
+# Ingress rule
+##########################################
+
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: traefik-pollinimini-net
+  namespace: pollinimini
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: pathprefixstrip
+spec:
+  rules:
+  - host: pollinimini.net
+    http:
+      paths:
+      - backend:
+          serviceName: pollinimini-net
+          servicePort: 80
+
+  - host: www.pollinimini.net
+    http:
+      paths:
+      - backend:
+          serviceName: pollinimini-net
+          servicePort: 80
